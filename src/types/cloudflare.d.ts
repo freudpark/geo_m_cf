@@ -27,6 +27,21 @@ declare global {
     interface CloudflareEnv {
         DB: D1Database;
     }
+
+    interface ScheduledEvent {
+        cron: string;
+        type: string;
+        scheduledTime: number;
+    }
+
+    interface ExecutionContext {
+        waitUntil(promise: Promise<any>): void;
+        passThroughOnException(): void;
+    }
+
+    interface Env {
+        DB: D1Database;
+    }
 }
 
 export { };
