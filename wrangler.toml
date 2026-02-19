@@ -7,7 +7,7 @@ pages_build_output_dir = ".vercel/output/static"
 [[d1_databases]]
 binding = "DB"
 database_name = "sentinel-db"
-database_id = "e0000000-0000-0000-0000-000000000000" # Replace with actual DB ID via `wrangler d1 info sentinel-db`
+database_id = "4ebaa46f-3937-42fd-a315-2e8531e3e13e" # sentinel-db
 
 # [Cron Trigger]
 # Pages does not support [triggers] in wrangler.toml yet.
