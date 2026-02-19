@@ -4,6 +4,10 @@ import { revalidatePath } from 'next/cache';
 import { Target, LogResult } from '../lib/db';
 import { getRequestContext } from '@cloudflare/next-on-pages';
 
+interface DashboardTarget extends Target {
+    latestLog?: LogResult;
+}
+
 // DYNAMIC IMPORT for mockDB to avoid Edge Runtime crash in production
 // import { mockDB } from '../lib/db/mock'; 
 
