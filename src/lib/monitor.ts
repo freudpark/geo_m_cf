@@ -69,7 +69,7 @@ export async function checkTarget(target: Target): Promise<{ status: number; lat
         };
 
         try {
-            status = await performRequest(modernHeaders, 15000);
+            status = await performRequest(modernHeaders, 5000);
 
             if (status === 400 || status === 403 || status === 406 || status === 500) {
                 throw new Error('RETRY_LEGACY');
@@ -92,7 +92,7 @@ export async function checkTarget(target: Target): Promise<{ status: number; lat
                     'Accept': '*/*'
                 };
 
-                status = await performRequest(legacyHeaders, 15000);
+                status = await performRequest(legacyHeaders, 10000);
             } else {
                 throw err; // Real error, rethrow to outer catch
             }
