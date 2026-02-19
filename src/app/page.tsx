@@ -7,7 +7,7 @@ export const runtime = 'edge'; // Enabled for Cloudflare Pages
 export const dynamic = 'force-dynamic';
 
 export default async function Home() {
-  let targets = [];
+  let targets: Awaited<ReturnType<typeof getDashboardData>> = [];
   let errorMsg = null;
 
   try {
