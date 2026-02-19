@@ -1,6 +1,7 @@
 import { getDashboardData } from '@/actions';
 import { MonitoringTable } from '@/components/ui/MonitoringTable';
-import { Activity, Settings } from 'lucide-react';
+import { Activity } from 'lucide-react';
+import AdminButton from '@/components/ui/AdminButton';
 
 // export const runtime = 'edge'; // Disabled for local file-based mock DB persistence
 export const dynamic = 'force-dynamic';
@@ -25,9 +26,7 @@ export default async function Home() {
             </h1>
           </div>
 
-          <a href="/admin" className="p-2 text-slate-400 hover:text-white transition-colors">
-            <Settings className="w-5 h-5" />
-          </a>
+          <AdminButton />
         </div>
       </header>
 
