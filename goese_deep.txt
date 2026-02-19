@@ -1,0 +1,5517 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Host www.goese.kr:443 was resolved.
+* IPv6: (none)
+* IPv4: 211.185.51.1
+*   Trying 211.185.51.1:443...
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* ALPN: server did not agree on a protocol. Uses default.
+* Established connection to www.goese.kr (211.185.51.1 port 443) from 192.168.0.9 port 53808 
+* using HTTP/1.x
+> GET /ko/page/main.do HTTP/1.1
+> Host: www.goese.kr
+> User-Agent: curl/8.16.0
+> Accept: */*
+> 
+* Request completely sent off
+* schannel: remote party requests renegotiation
+* schannel: renegotiating SSL/TLS connection
+* schannel: SSL/TLS connection renegotiated
+* schannel: remote party requests renegotiation
+* schannel: renegotiating SSL/TLS connection
+* schannel: SSL/TLS connection renegotiated
+< HTTP/1.1 200 OK
+< Date: Thu, 19 Feb 2026 03:55:56 GMT
+< Server: Apache
+< Content-Type: text/html;charset=UTF-8
+< Content-Language: ko
+< Set-Cookie: JSESSIONID=739885FE416A9BE14372E43BF6386AF9; Path=/; Secure; HttpOnly; SameSite=Lax
+< Vary: Accept-Encoding
+< Transfer-Encoding: chunked
+< 
+{ [16384 bytes data]
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/home/images/favicon.ico" type="image/ico" />
+	<title>경기도교육청안전교육관</title>
+	
+	<!-- 기본 세팅 -->
+	<link rel="stylesheet" type="text/css" href="/home/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/home/css/layout.css" />
+	<link rel="stylesheet" type="text/css" href="/home/css/main.css?v=2" />
+	<link rel="stylesheet" type="text/css" href="/home/css/custom.css?v=1" />
+	<link rel="stylesheet" type="text/css" href="/home/css/board.css" />
+	
+	<link rel="stylesheet" type="text/css" href="/home/js/jquery-ui-1.11.4/jquery-ui.css" />
+	<script src="/home/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+	
+	<script src="/home/js/jquery-ui-1.11.4/jquery-ui.js"></script>
+
+
+
+
+	<script src="/home/js/menu.js" type="text/javascript"></script>
+	<script src="/home/js/custom.js?v=20240123" type="text/javascript"></script>
+
+	<link rel="stylesheet" type="text/css" href="/home/js/swiper/swiper.css" />
+	<script src="/home/js/swiper/swiper.min.js" type="text/javascript"></script>
+	<script src="/home/js/main.js" type="text/javascript"></script>
+	
+	<script src="/webeditors/ckeditor/ckeditor.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+<div id="wrap">
+
+	<div class="skip">
+		<dl>
+			<dt class="skipH">바로가기 메뉴</dt>
+			<dd>
+				<a class="skipNavi" href="#logo">메뉴 바로가기</a>
+			</dd>
+			<dd>
+				<a class="skipNavi" href="#content">본문 바로가기</a>
+			</dd>
+			<dd>
+				<a class="skipNavi" href="#footer">하단 바로가기</a>
+			</dd>
+		</dl>
+	</div>
+	<!-- //skip -->
+
+	<header id="header">
+		
+
+
+
+
+
+
+		<div class="top-gnb">
+			<div class="con-area">
+				<h1 id="logo">
+					<a href="/ko/page/main.do"><img src="/home/images/common/logo.png" alt="경기도교육청 안전교육관" /></a>
+				</h1>
+				
+				<form id="topSearchFrm" name="topSearchFrm" method="post" accept-charset="utf-8" autocomplete="off" action="/ko/totalSearch.do;jsessionid=739885FE416A9BE14372E43BF6386AF9">
+				<div class="search-wrap">
+					<p class="search-tit">통합검색</p><!-- 통합검색 -->
+					<input type="text" id="topPageTotalSearchKeyword" name="topPageTotalSearchKeyword" class="search-txt" placeholder="검색어를 입력하세요."><!-- 검색어를 입력하세요. -->
+					<a href="#" class="search-btn" onclick="fn_top_total_search();"></a>
+				</div>
+				</form>
+				
+				<!-- 언어 선택 영역 :: s. -->
+				<div class="r-menu">
+					<ul class="lang-list">
+						<li><a href="/ko/page/main.do" class="lang ko active">한국어</a></li><!-- 한국어 -->
+						<li><a href="/en/page/main.do" class="lang en ">ENGLISH</a></li><!-- ENGLISH -->
+						<li><a href="/cn/page/main.do" class="lang ch ">中文</a></li><!-- 中文 -->						
+					</ul>
+					
+						<a href="/experience/useInfoLo.do?home=Y" class="login-btn">로그인</a><!-- 로그인 -->
+					
+					
+				</div>
+				<!-- 언어 선택 영역 :: e. -->
+			</div>			
+			
+		</div>
+
+		<div class="gnb-wrap">
+			<div class="con-area">
+				<nav class="menu">
+					<ul class="menu-list">
+						
+							
+							<li>
+								
+								
+									<a href="/ko/page/sub/sub01_02.do">교육관소개</a>
+								
+								<ul class="sub1">
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/sub01_02.do">인사말</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/sub01_01-10.do">시설안내</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/sub01_03.do">비전 및 연혁</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/sub01_04-11.do">부서안내</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/sub01_06.do">찾아가는 안전체험교육</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/sub01_07.do">대관시설안내</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/sub01_08.do">찾아오시는 길</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+								</ul>
+							</li>
+							
+						
+							
+							<li>
+								
+								
+									<a href="/ko/page/sub/sub_02_01.do">교육예약</a>
+								
+								<ul class="sub1">
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/sub_02_01.do">교육과정안내</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/experience/useInfo.do">예약신청</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/experience/expConfirmList.do">예약확인/취소</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/board/akswhrehwhtk/list.do">만족도 조사</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+								</ul>
+							</li>
+							
+						
+							
+							<li>
+								
+								
+									<a href="/ko/board/notice_ko/list.do">알림광장</a>
+								
+								<ul class="sub1">
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/board/video_ko/list.do">홍보영상</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/guidance.do">답사안내</a></li>
+										
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/board/notice_ko/list.do">공지사항</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/board/dnsdudqn/list.do">부서별자료실</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/board/budgetStatus/list.do">재정공개</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/board/press/list.do">언론보도자료</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+								</ul>
+							</li>
+							
+						
+							
+							<li>
+								
+								
+									<a href="/ko/board/reviews_kr/list.do">교육광장</a>
+								
+								<ul class="sub1">
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/board/reviews_kr/list.do">체험후기</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/board/faq/list.do">FAQ</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/board/rydbrwkfy/list.do">안전자료실</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/gkrtodwkdnjsqhdtk.do">자원봉사</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+								</ul>
+							</li>
+							
+						
+							
+							<li>
+								
+								
+									<a href="/ko/page/sub/sub05_01.do">전자민원</a>
+								
+								<ul class="sub1">
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/sub05_01.do">일반민원</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="https://www.gov.kr/portal/main">각종증명서 신청</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/wjdqhrhdro.do">정보공개창구</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/publicdata.do">공공데이터제공</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/before.do">사전정보공표목록</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/reportCenter.do">직장내 성희롱 신고센터</a></li>
+										
+									
+								
+									
+										
+										
+											<li><a href="/ko/page/sub/statusMou.do">업무협약 현황</a></li>
+										
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+								</ul>
+							</li>
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+					</ul>
+				</nav>
+				<ul class="right-menu">
+					<li class="sitemap"><a href="#" class="sitemap-btn">sitemap</a></li>
+					<li class="gn-down"><!-- 온라인 안전교육관 --><a href="/ko/page/sub/online.do" class="">온라인 안전교육관</a></li>
+					<li class="gn-down"><!-- 사이버 전시 --><a href="https://look360.kr/vr/goese_kr" class="" target="_new">사이버 전시</a></li>
+					
+					
+				</ul>
+			</div>
+
+			<div class="sitemap-wrap">
+				<div class="sitemap-area">
+					<div class="icon"><img src="/home/images/common/sitemap_img.png" alt="" /></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mo-header">
+			<h1 id="mo-logo"><a href="/ko/page/main.do"><img src="/home/images/common/mo_logo.png" alt="경기도교육청 안전교육관" /></a></h1>
+			<a href="#" class="mo-menu-btn"><img src="/home/images/common/mo_menu_btn.png" alt=""/></a>
+
+			<div class="mo-gnb-wrap">
+
+				<div class="mo-menu">
+					<ul class="lang-list">
+						<li><a href="/ko/page/main.do" class="lang ko active">한국어</a></li><!-- 한국어 -->
+						<li><a href="/en/page/main.do" class="lang en ">ENGLISH</a></li><!-- ENGLISH -->
+						<li><a href="/cn/page/main.do" class="lang ch ">中文</a></li><!-- 中文 -->						
+					</ul>
+					
+					<form id="mobileSearchFrm" name="mobileSearchFrm" method="post" accept-charset="utf-8" autocomplete="off" action="/ko/totalSearch.do">
+					<div class="search-wrap">
+						<p class="search-tit">통합검색</p><!-- 통합검색 -->
+						<input type="text" id="mobileTotalSearchKeyword" name="mobileTotalSearchKeyword" class="search-txt" placeholder="검색어를 입력하세요."><!-- 검색어를 입력하세요. -->
+						<a href="#" class="search-btn" onclick="fn_mobile_total_search();"></a>
+					</div>
+					</form>
+					
+					<div class="con-h">
+						
+							<div class="user-info">
+								로그인해주세요.<!-- 로그인해주세요. -->
+							</div>
+							<a href="/experience/useInfoLo.do" class="mo-login">로그인</a><!-- 로그인 버튼 -->
+						
+						
+						
+						<a href="#" class="mo-close"><img src="/home/images/common/mo_menu_close.png" alt=""></a>
+					</div>
+					
+					
+					<div class="con-box">
+						<ul class="mo-gnb" id="moMenu">
+							<!-- 주메뉴 -->
+							
+								
+								<li>
+									
+									
+										<a href="/ko/page/sub/sub01_02.do">교육관소개</a>
+									
+									<ul class="mo-snb1">
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/sub01_02.do">인사말</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/sub01_01-10.do">시설안내</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/sub01_03.do">비전 및 연혁</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/sub01_04-11.do">부서안내</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/sub01_06.do">찾아가는 안전체험교육</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/sub01_07.do">대관시설안내</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/sub01_08.do">찾아오시는 길</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+									</ul>
+								</li>
+								
+							
+								
+								<li>
+									
+									
+										<a href="/ko/page/sub/sub_02_01.do">교육예약</a>
+									
+									<ul class="mo-snb1">
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/sub_02_01.do">교육과정안내</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/experience/useInfo.do">예약신청</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/experience/expConfirmList.do">예약확인/취소</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/board/akswhrehwhtk/list.do">만족도 조사</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+									</ul>
+								</li>
+								
+							
+								
+								<li>
+									
+									
+										<a href="/ko/board/notice_ko/list.do">알림광장</a>
+									
+									<ul class="mo-snb1">
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/board/video_ko/list.do">홍보영상</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/guidance.do">답사안내</a></li>
+											
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/board/notice_ko/list.do">공지사항</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/board/dnsdudqn/list.do">부서별자료실</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/board/budgetStatus/list.do">재정공개</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/board/press/list.do">언론보도자료</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+									</ul>
+								</li>
+								
+							
+								
+								<li>
+									
+									
+										<a href="/ko/board/reviews_kr/list.do">교육광장</a>
+									
+									<ul class="mo-snb1">
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/board/reviews_kr/list.do">체험후기</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/board/faq/list.do">FAQ</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/board/rydbrwkfy/list.do">안전자료실</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/gkrtodwkdnjsqhdtk.do">자원봉사</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+									</ul>
+								</li>
+								
+							
+								
+								<li>
+									
+									
+										<a href="/ko/page/sub/sub05_01.do">전자민원</a>
+									
+									<ul class="mo-snb1">
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/sub05_01.do">일반민원</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="https://www.gov.kr/portal/main">각종증명서 신청</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/wjdqhrhdro.do">정보공개창구</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/publicdata.do">공공데이터제공</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/before.do">사전정보공표목록</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/reportCenter.do">직장내 성희롱 신고센터</a></li>
+											
+										
+									
+										
+											
+											
+												<li><a href="/ko/page/sub/statusMou.do">업무협약 현황</a></li>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+									</ul>
+								</li>
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+						</ul>
+					</div>
+
+					<div class="mo-footer">
+						<figure><img src="/home/images/common/mo_foot_th.png" alt="" /></figure>
+						<ul class="mo-foot-list">
+							<li><!-- 온라인 안전교육관 --><a href="/ko/page/sub/online.do" class="">온라인 안전교육관</a></li>
+							<li><!-- 사이버 전시 --><a href="https://look360.kr/vr/goese_kr" class="" target="_new">사이버 전시</a></li>
+							<li><!-- 예약 --><a href="/reserved.do" class="li01">예약</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="bodyBg"></div>
+			</div>
+		</div>
+		<div class="popup-wrap">
+			<div class="popup-pc">
+				<div class="h-box">
+					
+						
+							<!-- 한국어 -->
+							<strong class="tit">사이버 전시</strong>
+							<p class="txt">각 존별 플레이 버튼 클릭 시 영상이 나옵니다.</p>
+						
+						
+						
+					
+					<a href="#" class="pop-close"></a>
+				</div>
+				<div class="popup-con">
+					<div class="floor">
+						<strong class="floor-num">2F</strong>
+						<div class="img-wrap">
+							
+								
+									<!-- 한국어 -->
+									<a href="#" class="view-btn btn-01" data-tab="video-01">교통안전지역</a>
+									<a href="#" class="view-btn btn-02" data-tab="video-02">미래안전지역</a>
+									<a href="#" class="view-btn btn-03" data-tab="video-03">일상안전지역</a>
+								
+								
+								
+							
+						<img src="/home/images/main/floor_02.jpg" alt="">
+						</div>
+					</div>
+					<div class="floor">
+						<strong class="floor-num">3F</strong>
+						<div class="img-wrap">
+							
+								
+									<!-- 한국어 -->
+									<a href="#" class="view-btn btn-04" data-tab="video-04">학생안전지역</a>
+									<a href="#" class="view-btn btn-05" data-tab="video-05">응급안전지역</a>
+									<a href="#" class="view-btn btn-06" data-tab="video-06">야외안전지역</a>
+								
+								
+								
+							
+							<img src="/home/images/main/floor_03.jpg" alt="">
+						</div>
+					</div>
+					<div id="video-01" class="video-pop right">
+						<div class="video-wrap" >
+							<video controls="" class="myVideo" width="100%"><source src="/mov/mov_01.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+						</div>
+						<div class="video-con">
+							
+								
+									<!-- 한국어 -->
+									<strong class="video-tit">교통안전지역</strong>
+									<a href="#" class="video-close">닫기</a>
+								
+								
+								
+							
+							
+						</div>
+					</div>
+					<div id="video-02" class="video-pop right">
+						<div class="video-wrap" >
+							<video controls="" class="myVideo" width="100%"><source src="/mov/mov_03.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+						</div>
+						<div class="video-con">
+							
+								
+										<!-- 한국어 -->
+										<strong class="video-tit">미래안전지역</strong>
+										<a href="#" class="video-close">닫기</a>
+								
+										
+								
+								
+							
+						</div>
+					</div>
+					<div id="video-03" class="video-pop right">
+						<div class="video-wrap" >
+							<video controls="" class="myVideo" width="100%"><source src="/mov/mov_02.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+						</div>
+						<div class="video-con">
+							
+								
+										<!-- 한국어 -->
+										<strong class="video-tit">일상안전지역</strong>
+										<a href="#" class="video-close">닫기</a>
+								
+								
+								
+								
+							
+						</div>
+					</div>
+					<div id="video-04" class="video-pop left">
+						<div class="video-wrap" >
+							<video controls="" class="myVideo" width="100%"><source src="/mov/mov_07.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+						</div>
+						<div class="video-con">
+							
+								
+									<!-- 한국어 -->
+									<strong class="video-tit">학생안전지역</strong>
+									<a href="#" class="video-close">닫기</a>
+								
+								
+								
+								
+							
+						</div>
+					</div>
+					<div id="video-05" class="video-pop left">
+						<div class="video-wrap" >
+							<video controls="" class="myVideo" width="100%"><source src="/mov/mov_05.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+						</div>
+						<div class="video-con">
+							
+								
+									<!-- 한국어 -->
+									<strong class="video-tit">응급안전지역</strong>
+									<a href="#" class="video-close">닫기</a>
+								
+								
+								
+							
+						</div>
+					</div>
+					
+					<div id="video-06" class="video-pop left">
+						<div class="video-wrap" >
+							<video controls="" class="myVideo" width="100%"><source src="/mov/mov_04.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+						</div>
+						<div class="video-con">
+							
+								
+									<!-- 한국어 -->
+									<strong class="video-tit">야외안전지역</strong>
+									<a href="#" class="video-close">닫기</a>
+								
+								
+								
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="popup-mo">
+				<div class="h-box">
+					
+						
+							<!-- 한국어 -->
+							<strong class="tit">사이버 전시</strong>
+							<p class="txt">각 존별 플레이 버튼 클릭 시 영상이 나옵니다.</p>
+						
+						
+						
+					
+					<a href="#" class="pop-close"></a>
+				</div>
+				<div class="popup-con">
+					<div class="tab-wrap">
+						<ul class="tabs">
+							<li class="tab-link current" data-tab="tab-1">2층</li>
+							<li class="tab-link" data-tab="tab-2">3층</li>
+						</ul>
+					</div>
+					<div id="tab-1" class="tab-con current">
+						<ul class="floor-list">
+							<li>
+								
+									
+										<!-- 한국어 -->
+										<strong class="list-tit">교통안전지역</strong>
+									
+									
+									
+								
+					
+								
+								<div class="list-con">
+									<div class="img-wrap">
+										<img src="/home/images/main/floor_0201.jpg" alt="">
+									</div>
+									<div class="video-wrap" >
+										<video controls="" class="myVideo" width="100%"><source src="/mov/mov_01.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+									</div>
+								</div>
+							</li>
+							<li>
+								
+									
+										<!-- 한국어 -->
+										<strong class="list-tit">미래안전지역</strong>
+									
+									
+									
+								
+								
+										
+								<div class="list-con">
+									<div class="img-wrap">
+										<img src="/home/images/main/floor_0202.jpg;jsessionid=739885FE416A9BE14372E43BF6386AF9" alt="">
+									</div>
+									<div class="video-wrap" >
+										<video controls="" class="myVideo" width="100%"><source src="/mov/mov_03.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+									</div>
+								</div>
+							</li>
+							<li>
+								
+									
+										<!-- 한국어 -->
+										<strong class="list-tit">일상안전지역</strong>
+									
+									
+									
+								
+								<div class="list-con">
+									<div class="img-wrap">
+										<img src="/home/images/main/floor_0203.jpg;jsessionid=739885FE416A9BE14372E43BF6386AF9" alt="">
+									</div>
+									<div class="video-wrap" >
+										<video controls="" class="myVideo" width="100%"><source src="/mov/mov_02.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div id="tab-2" class="tab-con">
+						<ul class="floor-list">
+							<li>
+								
+									
+										<!-- 한국어 -->
+										<strong class="list-tit">학생안전지역</strong>
+									
+									
+									
+								
+								<div class="list-con">
+									<div class="img-wrap">
+										<img src="/home/images/main/floor_0301.jpg" alt="">
+									</div>
+									<div class="video-wrap" >
+										<video controls="" class="myVideo" width="100%"><source src="/mov/mov_07.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+									</div>
+								</div>
+							</li>
+							<li>
+								
+									
+										<!-- 한국어 -->
+										<strong class="list-tit">응급안전지역</strong>
+									
+									
+									
+								
+								<div class="list-con">
+									<div class="img-wrap">
+										<img src="/home/images/main/floor_0302.jpg;jsessionid=739885FE416A9BE14372E43BF6386AF9" alt="">
+									</div>
+									<div class="video-wrap" >
+										<video controls="" class="myVideo" width="100%"><source src="/mov/mov_05.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+									</div>
+								</div>
+							</li>
+							<li>
+								
+									
+										<!-- 한국어 -->
+										<strong class="list-tit">야외안전지역</strong>
+									
+									
+									
+								
+								
+								<div class="list-con">
+									<div class="img-wrap">
+										<img src="/home/images/main/floor_0303.jpg;jsessionid=739885FE416A9BE14372E43BF6386AF9" alt="">
+									</div>
+									<div class="video-wrap" >
+										<video controls="" class="myVideo" width="100%"><source src="/mov/mov_04.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+ 
+   <script type="text/javaScript" language="javascript" defer="defer">
+  
+		function fn_top_total_search(){
+			
+			if( $("#topPageTotalSearchKeyword").val().length < 2 ){
+				alert("1자 이상 검색어를 입력해 주세요.");	/* 1자 이상 검색어를 입력해 주세요. */
+				return false;
+			};
+			
+			$("#topSearchFrm").submit();
+			
+		}
+		
+		function fn_mobile_total_search(){
+			
+			if( $("#mobileTotalSearchKeyword").val().length < 2 ){
+				alert("1자 이상 검색어를 입력해 주세요.");	/* 1자 이상 검색어를 입력해 주세요. */
+				return false;
+			};
+			
+			$("#mobileSearchFrm").submit();
+			
+		}
+		
+	</script>
+	</header>
+
+	<div id="container">
+
+		
+		
+		
+
+
+
+
+<div id="content">
+
+	<div class="visual-section">
+		<div class="slide-box swiper-container">
+			<ul class="swiper-wrapper visual-slide">
+			      
+                    <li class="swiper-slide">
+                    
+                        
+                        
+                            <a href="" class="con-box" style="background-image:url(/attachImage.do;jsessionid=739885FE416A9BE14372E43BF6386AF9?attDownloadId=c2c2eaca-c9e1-482d-99ef-86838c6186aa)"></a>
+                        
+                    
+                    </li>
+                    <!--                         <li class="swiper-slide"><div class="img-box li02"></div></li> -->
+                
+                    <li class="swiper-slide">
+                    
+                        
+                        
+                            <a href="" class="con-box" style="background-image:url(/attachImage.do;jsessionid=739885FE416A9BE14372E43BF6386AF9?attDownloadId=425585c6-eb02-4840-8871-e90df4f3eed6)"></a>
+                        
+                    
+                    </li>
+                    <!--                         <li class="swiper-slide"><div class="img-box li02"></div></li> -->
+                
+<!-- 				<li class="swiper-slide"><div class="img-box li01"></div></li> -->
+<!-- 				<li class="swiper-slide"><div class="img-box li02"></div></li> -->
+			</ul>
+
+			<div class="slide-txt">
+				<div class="con-area">
+					<div class="tit-img">
+						<img src="/home/images/main/visual_tit.png;jsessionid=739885FE416A9BE14372E43BF6386AF9" class="pc" alt="">
+						<img src="/home/images/main/visual_tit_mo.png;jsessionid=739885FE416A9BE14372E43BF6386AF9" class="mo" alt="">
+					</div>
+					<p>
+						위험한 상황에서 소중한 생명을 지키기 위해,<br/><!-- 위험한 상황에서 소중한 생명을 지키기 위해, -->
+						안전한 생활습관을 익히고 위기대응 능력을 키우는 곳입니다.<!-- 안전한 생활습관을 익히고 위기대응 능력을 키우는 곳입니다. -->
+					</p>
+					
+					
+					
+						
+                         
+                         
+						
+					
+					<a href="/ko/page/sub/sub01_01-11.do;jsessionid=739885FE416A9BE14372E43BF6386AF9">소개 바로가기</a><!-- 소개 바로가기 -->
+					
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="con-area">
+
+			<div class="section-quick">
+				<ul class="quick-menu">
+					<li class="li01">
+						<!-- <a href="#"> -->
+							<div class="con-box">
+								<strong class="tit">자주찾는 메뉴</strong><!-- 자주찾는 메뉴 -->
+								<p>빠른안내 서비스</p><!-- 빠른안내 서비스 -->
+							</div>
+						<!-- </a> -->
+					</li>
+					<li class="li02">
+                              
+                                    
+                                        <!-- 한국어 -->
+                                        <a href="/ko/page/sub/sub01_01-11.do;jsessionid=739885FE416A9BE14372E43BF6386AF9">
+                                            
+                                    
+                                    
+                                    
+                                
+                                <div class="icon"></div>
+                                            <div class="con-box">
+                                                <strong class="tit">시설안내</strong><!-- 시설안내 -->
+                                                <p>안전교육관 이용방법</p><!-- 안전교육관 이용방법 -->
+                                            </div>
+                                 </a>
+					</li>
+					<li class="li03">
+                             
+                                  
+                                      <!-- 한국어 -->
+                                      <a href="/ko/page/sub/sub_02_01.do;jsessionid=739885FE416A9BE14372E43BF6386AF9">
+                                  
+                                  
+                                  
+                              
+							<div class="icon"></div>
+							<div class="con-box">
+								<strong class="tit">예약안내</strong><!-- 예약안내 -->
+								<p>안전교육관 예약안내</p><!-- 안전교육관 예약안내 -->
+							</div>
+						</a>
+					</li>
+					<li class="li04">
+						     
+                                    
+                                        <!-- 한국어 -->
+                                        <a href="/reserved.do;jsessionid=739885FE416A9BE14372E43BF6386AF9">
+                                    
+                                    
+                                    
+                             
+							<div class="icon"></div>
+							<div class="con-box">
+								<strong class="tit">예약신청</strong><!-- 예약신청 -->
+								<p>체험예약 신청</p><!-- 체험예약 신청 -->
+							</div>
+						</a>
+					</li>
+					<li class="li05">
+                             
+                                 
+                                     <!-- 한국어 -->
+                                     <a href="/ko/page/sub/sub01_08.do;jsessionid=739885FE416A9BE14372E43BF6386AF9">
+                                 
+                                 
+                                 
+                             
+                                
+							<div class="icon"></div>
+							<div class="con-box">
+								<strong class="tit">오시는 길</strong><!-- 오시는 길 -->
+								<p>안전교육관 오시는길</p><!-- 안전교육관 오시는길 -->
+							</div>
+						</a>
+					</li>
+					
+					
+						<!-- 한국어 -->
+						<li class="li06">
+							<a href="/ko/page/sub/before.do;jsessionid=739885FE416A9BE14372E43BF6386AF9">
+								<div class="icon"></div>
+								<div class="con-box">
+									<strong class="tit">사전정보공표목록</strong>
+									<p></p>
+								</div>
+							</a>
+						</li>
+					
+					
+				</ul>
+			</div>
+
+			
+				
+				
+					<!-- 한국어 -->
+					<div class="section-01">
+					  <div class="banner-box">
+						<div class="con-h">
+							<h2 class="tit">안전지역 체험</h2><!-- 안전지역 체험 -->
+							<p>경기도교육청안전교육관에는 다양한 안전지역을 체험할 수 있습니다.</p><!-- 경기도교육청안전교육관에는 다양한 안전지역을 체험할 수 있습니다. -->
+		
+							<div class="slide-controls">
+								<span class="slide-prev"></span>
+								<span class="slide-next"></span>
+							</div>
+						</div>
+						<div class="slide-box swiper-container">
+							<ul class="swiper-wrapper info-slide">
+                           
+                                    <!-- 한국어 -->
+                                    <li class="swiper-slide">
+                                        <a href="/ko/page/sub/sub01_01-11.do;jsessionid=739885FE416A9BE14372E43BF6386AF9">
+                                            <img src="/home/images/main/banner_01.png;jsessionid=739885FE416A9BE14372E43BF6386AF9" alt="야외 안전" /><!-- 일상안전 -->
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="/ko/page/sub/sub01_01-12.do;jsessionid=739885FE416A9BE14372E43BF6386AF9">
+                                            <img src="/home/images/main/banner_02.png;jsessionid=739885FE416A9BE14372E43BF6386AF9" alt="교통 안전" /><!-- 교통안전 -->
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="/ko/page/sub/sub01_01-21.do;jsessionid=739885FE416A9BE14372E43BF6386AF9">
+                                            <img src="/home/images/main/banner_03.png;jsessionid=739885FE416A9BE14372E43BF6386AF9" alt="일상 안전" /><!-- 야외안전 -->
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="/ko/page/sub/sub01_01-22.do;jsessionid=739885FE416A9BE14372E43BF6386AF9">
+                                            <img src="/home/images/main/banner_04.png;jsessionid=739885FE416A9BE14372E43BF6386AF9" alt="학생 안전" /><!-- 학생안전 -->
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="/ko/page/sub/sub01_01-23.do;jsessionid=739885FE416A9BE14372E43BF6386AF9">
+                                            <img src="/home/images/main/banner_05.png;jsessionid=739885FE416A9BE14372E43BF6386AF9" alt="응급 안전" /><!-- 응급 -->
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="/ko/page/sub/sub01_01-13.do;jsessionid=739885FE416A9BE14372E43BF6386AF9">
+                                            <img src="/home/images/main/banner_06.png;jsessionid=739885FE416A9BE14372E43BF6386AF9" alt="미래 안전" /><!-- 미래 -->
+                                        </a>
+                                    </li>
+                                
+							</ul>
+						</div>
+					</div>
+		
+						<div class="pop-con-box">
+							<div class="slide-box swiper-container pop-slide-wrap">
+								<div class="controll">
+									<div class="slide-controls">
+										<span class="slide-prev"></span>
+										<span id="pop-slide-cot" class="slide-controls-btn"></span>
+										<span class="slide-next"></span>
+									</div>
+									<div class="swiper-pagination"></div>
+								</div>
+								<ul class="swiper-wrapper pop-slide">
+								
+									<li class="swiper-slide">
+										
+											
+																							
+												<a href="https://www.youtube.com/user/GoeEduNews" class="con-box">
+												<img src="/attachImage.do;jsessionid=739885FE416A9BE14372E43BF6386AF9?attDownloadId=84f53d7b-2bf2-4051-8d86-0193687ae32b" alt="" style='height:150px;'/>
+												</a>
+											
+										
+									</li>									
+								
+									<li class="swiper-slide">
+										
+											
+																							
+												<a href="https://www.facebook.com/kgedu1" class="con-box">
+												<img src="/attachImage.do;jsessionid=739885FE416A9BE14372E43BF6386AF9?attDownloadId=31fd8e70-2268-464d-921d-fa423e8c3f8e" alt="" style='height:150px;'/>
+												</a>
+											
+										
+									</li>									
+								
+									<li class="swiper-slide">
+										
+											
+																							
+												<a href="https://www.instagram.com/gyeonggiedu_official/" class="con-box">
+												<img src="/attachImage.do;jsessionid=739885FE416A9BE14372E43BF6386AF9?attDownloadId=4f0fe501-6453-49db-828b-66654734504f" alt="" style='height:150px;'/>
+												</a>
+											
+										
+									</li>									
+								
+									<li class="swiper-slide">
+										
+											
+																							
+												<a href="https://blog.naver.com/go_edu" class="con-box">
+												<img src="/attachImage.do;jsessionid=739885FE416A9BE14372E43BF6386AF9?attDownloadId=11a9f08c-d734-4a83-b00e-1b67eceafa10" alt="" style='height:150px;'/>
+												</a>
+											
+										
+									</li>									
+								
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+		
+					<div class="section-02">
+		
+							
+		
+							<div class="youtube-box">
+								<div class="con-h">
+									<h2 class="tit">홍보영상</h2><!-- 홍보영상 -->
+									<a href="/ko/board/video_ko/list.do;jsessionid=739885FE416A9BE14372E43BF6386AF9" class="more">더보기</a><!-- 더보기 -->
+								</div>
+								<div class="con-box">									
+									<!-- <video controls=""  width="90%"><source src="/mov/mov_00.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>-->
+									<iframe src="https://www.youtube.com/embed/G0rfxI5OwCw" title="YouTube video player" frameborder="0" width="100%"></iframe>
+								</div>
+							</div>
+							
+							
+							<a href="javascript:void(0)" onclick="popOpenlay('#info-pop');" class="rule-box">
+								<h2 class="tit">체험시설안내</h2><!-- 이용안내 -->
+								<p>꼭 알고있어야 할<br/><!-- 꼭 알고있어야 할 -->
+									체험시설 안내</p><!-- 이용수칙 -->
+							</a>
+		
+		
+							<div class="notice-box">
+								<div class="con-h">
+									<h2 class="tit">공지사항</h2><!-- 공지사항 -->
+									<a href="/ko/board/notice_ko/list.do;jsessionid=739885FE416A9BE14372E43BF6386AF9" class="more">
+										더보기
+									</a><!-- 더보기 -->
+								</div>
+								<ul>
+									
+									<li>
+										<a href="/ko/board/notice_ko/view.do;jsessionid=739885FE416A9BE14372E43BF6386AF9?docSeq=2860">
+										<p>2025년  지방공무원 겸직실태 현황 공개</p>
+										
+										</a>
+									</li>									
+									
+									<li>
+										<a href="/ko/board/notice_ko/view.do;jsessionid=739885FE416A9BE14372E43BF6386AF9?docSeq=2786">
+										<p>2025년 을지연습 실시 알림</p>
+										
+										</a>
+									</li>									
+									
+									<li>
+										<a href="/ko/board/notice_ko/view.do;jsessionid=739885FE416A9BE14372E43BF6386AF9?docSeq=2768">
+										<p>2025 여름방학 맞이 체험형 안전교육 신청 안내</p>
+										
+										</a>
+									</li>									
+									
+									<li>
+										<a href="/ko/board/notice_ko/view.do;jsessionid=739885FE416A9BE14372E43BF6386AF9?docSeq=2753">
+										<p>2024년 1회용품 사용 실태 공개</p>
+										
+										</a>
+									</li>									
+									
+								</ul>
+							</div>
+							
+							<div class="agency-box">
+								<div class="con-h">
+									<h2 class="tit">유관기관</h2><!-- 유관기관 -->
+								</div>
+								<div class="con-box">
+									<div class="link-list bmar_5">
+										<p class="title">유관기관</p><!-- 유관기관 바로가기 -->
+										<ul class="site-url">
+											<li><a target="_blank" href="http://www.goe.go.kr">경기도교육청</a></li>
+											<li><a target="_blank" href="http://www.moe.go.kr">교육부</a></li>
+											<li><a target="_blank" href="https://www.ggc.go.kr/site/cmt/home?divisionCommittee=standing&cmtCd=01&cmtNmCd=C908">경기도의회 교육기획위원회</a></li>
+											<li><a target="_blank" href="https://www.ggc.go.kr/site/cmt/home?divisionCommittee=standing&cmtCd=01&cmtNmCd=C909">경기도의회 교육행정위원회</a></li>
+											<li><a target="_blank" href="https://www.ggc.go.kr">경기도의회</a></li>
+											<li><a target="_blank" href="https://www.goedy.kr/">동두천양주교육지원청</a></li>
+											<li><a target="_blank" href="http://www.goe416.go.kr/">4.16민주시민교육원</a></li>
+											<li><a target="_blank" href="https://www.ggssia.or.kr">경기도학교안전공제회</a></li>
+											<li><a target="_blank" href="http://www.schoolsafe.kr">학교안전정보센터</a></li>
+											<li><a target="_blank" href="https://www.koies.or.kr">한국교육시설안전원</a></li>
+											<li><a target="_blank" href="https://www.yangju.go.kr">양주시청</a></li>
+											<li><a target="_blank" href="https://ggbpolice.go.kr/yangju/mainPage.do">양주경찰서</a></li>
+											<li><a target="_blank" href="https://119.gg.go.kr/yangju">양주소방서</a></li>
+										</ul>
+										<a href="#" class="go-btn" target="_blank">GO</a>
+									</div>
+									
+									<div class="link-list bmar_5">
+										<p class="title">유관기관</p><!-- 유관기관 바로가기 -->
+										<ul class="site-url">
+											<li><a target="_blank" href="https://www.yangju.go.kr/tour/index.do">양주문화관광</a></li>
+											<li><a target="_blank" href="https://www.yangju.go.kr/museum/index.do">양주시립회암사지박물관&회암사지</a></li>
+											<li><a target="_blank" href="https://www.yangju.go.kr/changucchin/index.do">양주시립장욱진미술관</a></li>
+											<li><a target="_blank" href="https://www.lighting-museum.com/">필룩스조명박물관</a></li>
+											<li><a target="_blank" href="https://artpark.modoo.at/">가나아트파크</a></li>
+											<li><a target="_blank" href="http://www.starsvalley.com/">송암스페이스센터</a></li>
+											<li><a target="_blank" href="https://www.yangju.go.kr/tour/contents.do?key=837">양주관아지</a></li>
+											<li><a target="_blank" href="https://www.yangju.go.kr/tour/contents.do?key=838">양주향교</a></li>
+											<li><a target="_blank" href="https://www.yangju.go.kr/tour/contents.do?key=3248">청암민속박물관</a></li>
+											<li><a target="_blank" href="http://www.chosoang.kr/">조소앙기념관</a></li>
+										</ul>
+										<a href="#" class="go-btn" target="_blank">GO</a>
+									</div>
+									<div class="link-list">
+										<p class="title">유관기관</p><!-- 유관기관 바로가기 -->
+										<ul class="site-url">
+											<li><a target="_blank" href="https://119.gg.go.kr/safe/index">경기도국민안전체험관</a></li>
+											<li><a target="_blank" href="https://home.pen.go.kr/safetycenter/main.do">부산학생종합안전체험관</a></li>
+											<li><a target="_blank" href="http://www.dge.go.kr/dgeriver/main.do">대구교육낙동강수련원 안전체험관</a></li>
+											<li><a target="_blank" href="http://www.dge.go.kr/daegu-i/main.do">대구유아교육진흥원 안전체험관</a></li>
+											<li><a target="_blank" href="http://www.ice.go.kr/main.do?s=safety">인천광역시교육청 학생안전체험관</a></li>
+											<li><a target="_blank" href="https://safesj.sje.go.kr/">세종특별자치시교육청 안전체험교육원</a></li>
+											<li><a target="_blank" href="https://www.cbstc.go.kr/jcsafety/main.php">충청북도학생수련원 제천분원 안전체험관</a></li>
+											<li><a target="_blank" href="https://www.cnstc.or.kr/main/index.action">충청남도교육청안전수련원 학생안전체험관</a></li>
+											<li><a target="_blank" href="http://jnesafety.da.jne.kr/">전남안전체험학습장</a></li>
+											<li><a target="_blank" href="http://www.gbe.kr/safetycenter/main.do">경상북도교육청 의성안전체험관</a></li>
+											<li><a target="_blank" href="http://iss.gne.go.kr/">경상남도교육청 학생안전체험교육원</a></li>
+											<li><a target="_blank" href="https://119.busan.go.kr/firesafe/main">부산광역시 119안전체험관</a></li>
+											<li><a target="_blank" href="https://www.taebaek.go.kr/365safetown/index.do">365세이프타운</a></li>
+											<li><a target="_blank" href="https://www.daegu.go.kr/safe119/index.do">대구시민안전테마파크</a></li>
+											<li><a target="_blank" href="http://safe119.seoul.go.kr/">서울특별시소방재난본부 시민안전체험관</a></li>
+											<li><a target="_blank" href="https://safe.cn119.go.kr/kor/index.do">충청남도 학생안전체험관</a></li>
+										</ul>
+										<a href="#" class="go-btn" target="_blank">GO</a>
+									</div>
+		
+								</div>
+							</div>
+						</div>
+				
+				
+				
+				
+			
+
+		</div>
+					
+	</div>
+					
+
+<!---------------------------------------한국어--------------------------------------------->
+
+<!-- 체험시설안내 -->
+
+	
+		<!-- 한국어 -->
+			
+					<!--  2021-04-15 *한국어 팝업 추가  -->
+					<div class="pop-modal fade" id="info-pop">
+						<div class="pop-lay safety li01">
+							<div class="pop-h">
+								일상안전지역 <span>생활속 안전사고의 대처능력을 강화시켜 줍니다.</span>
+							</div>
+							<div class="pop-con">
+								<div class="safety-box">
+									<div class="img-box">
+										<img src="/home/images/sub/01/01_01_pop.jpg" alt="일상안전지역"/>
+									</div>
+									<div class="con-box">
+										<ul class="list-in">
+											<li>
+												<div class="cons">
+													<span class="icon li01"></span>
+													<strong>체험인원</strong>
+													<p>15명</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li02"></span>
+													<strong>소요시간</strong>
+													<p>80분</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li03"></span>
+													<strong>체험대상</strong>
+													<p>초,중,고등학생</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li04"></span>
+													<strong>예약신청</strong>
+													<p>홈페이지 예약</p>
+												</div>
+											</li>
+										</ul>
+	
+										<strong class="tits">체험 및 전시시설</strong>
+										<a href="javascript:popOpen('#vedio-pop-01');" class="link-btn-02">사이버 전시</a>
+	
+										<ul class="txt-list">
+											<li>
+												<strong>화재안전 체험</strong>
+												<p>화재안전 교육, 화재신고체험, 생명을 지키는 화재감지기</p>
+											</li>
+											<li>
+												<strong>승강기안전 체험</strong>
+												<p>승강기 안전교육, 승강기 사고 체험</p>
+											</li>
+											<li>
+												<strong>소화기 체험</strong>
+												<p>소화기(전) 사용법, 과학실 화재 진압 체험</p>
+											</li>
+											<li>
+												<strong>생활안전 체험 (가정)</strong>
+												<p>거실안전, 주방안전, 욕실안전</p>
+											</li>
+											<li>
+												<strong>생활안전 체험 (야외)</strong>
+												<p>캠핑 안전수칙, 안전한 야외활동</p>
+											</li>
+											<li>
+												<strong>대피 체험</strong>
+												<p>화재 대피 체험</p>
+											</li>
+											<li>
+												<strong>직업안전 체험</strong>
+												<p>안전한 작업장, 도로 위의 위험요소, 공사장 안전 체험</p>
+											</li>
+											<li>
+												<strong>완강기 체험</strong>
+												<p>피난 기구 안전교육, 완강기 체험, 피난 구조대</p>
+											</li>
+										</ul>
+	
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pop-lay safety li02">
+							<div class="pop-h">
+								교통안전지역 <span>교통사고의 빈도를 줄이는방법을  체험할 수 있습니다. </span>
+							</div>
+							<div class="pop-con">
+								<div class="safety-box">
+									<div class="img-box">
+										<img src="/home/images/sub/01/01_02_pop.jpg" alt="교통안전지역"/>
+									</div>
+									<div class="con-box">
+										<ul class="list-in">
+											<li>
+												<div class="cons">
+													<span class="icon li01"></span>
+													<strong>체험인원</strong>
+													<p>15명</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li02"></span>
+													<strong>소요시간</strong>
+													<p>80분</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li03"></span>
+													<strong>체험대상</strong>
+													<p>초,중,고등학생</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li04"></span>
+													<strong>예약신청</strong>
+													<p>홈페이지 예약</p>
+												</div>
+											</li>
+										</ul>
+	
+										<strong class="tits">체험 및 전시시설</strong>
+										<a href="javascript:popOpen('#vedio-pop-02');" class="link-btn-02">사이버 전시</a>
+	
+										<ul class="txt-list">
+											<li>
+												<strong>보행안전 체험</strong>
+												<p>교통안전 교육, 보행안전수칙교육, 횡단보도 건너기</p>
+											</li>
+											<li>
+												<strong>지하철안전 체험</strong>
+												<p>지하철 승강장 안전수칙, 지하철 내부 안전수칙,
+													화재 발생 시 지하철 탈출하기</p>
+											</li>
+											<li>
+												<strong>버스안전 체험</strong>
+												<p>버스안전수칙교육, 버스사고 시 비상탈출</p>
+											</li>
+											<li>
+												<strong>자전거안전 체험</strong>
+												<p>자전거 안전교육, 안전한 자전거 타기(시뮬레이터 영상)</p>
+											</li>
+											<li>
+												<strong>자동차안전 체험</strong>
+												<p>자동차안전수칙 교육, 자동차전복사고 체험,
+													교통사고 후 행동수칙</p>
+											</li>
+										</ul>
+	
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pop-lay safety li03">
+							<div class="pop-h">
+								미래안전지역 <span>미래의 도시에서 VR을 이용한 안전 체험을 할 수 있습니다. </span>
+							</div>
+							<div class="pop-con">
+								<div class="safety-box">
+									<div class="img-box">
+										<img src="/home/images/sub/01/01_03_pop.jpg" alt="일상안전지역"/>
+									</div>
+									<div class="con-box">
+										<ul class="list-in">
+											<li>
+												<div class="cons">
+													<span class="icon li01"></span>
+													<strong>체험인원</strong>
+													<p>15명</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li02"></span>
+													<strong>소요시간</strong>
+													<p>80분</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li03"></span>
+													<strong>체험대상</strong>
+													<p>초,중,고등학생</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li04"></span>
+													<strong>예약신청</strong>
+													<p>홈페이지 예약</p>
+												</div>
+											</li>
+										</ul>
+	
+										<strong class="tits">체험 및 전시시설</strong>
+										<a href="javascript:popOpen('#vedio-pop-03');" class="link-btn-02">사이버 전시</a>
+	
+										<ul class="txt-list">
+											<li class="ws">
+												<strong>미래안전 체험</strong>
+												<ul>
+													<li>미래도시 사이버안전 체험(VR)</li>
+													<li>가상 안전체험 (VR)</li>
+												</ul>
+											</li>
+											<li class="ws">
+												<strong>응급안전</strong>
+												<ul>
+													<li>4D 영상체험(신장 110cm 이상)</li>
+													<li>심폐소생술 체험</li>
+													<li>기도폐쇄, 하임리히법</li>
+													<li>생활 응급처치법</li>
+												</ul>
+											</li>
+	
+										</ul>
+	
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pop-lay safety li04">
+							<div class="pop-h">
+								야외안전지역 <span>풍수해, 지진 등 야외에서의 안전을 체험할 수 있습니다. </span>
+							</div>
+							<div class="pop-con">
+								<div class="safety-box">
+									<div class="img-box">
+										<img src="/home/images/sub/01/01_04_pop.jpg" alt="야외안전지역"/>
+									</div>
+									<div class="con-box">
+										<ul class="list-in">
+											<li>
+												<div class="cons">
+													<span class="icon li01"></span>
+													<strong>체험인원</strong>
+													<p>15명</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li02"></span>
+													<strong>소요시간</strong>
+													<p>80분</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li03"></span>
+													<strong>체험대상</strong>
+													<p>초,중,고등학생</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li04"></span>
+													<strong>예약신청</strong>
+													<p>홈페이지 예약</p>
+												</div>
+											</li>
+										</ul>
+	
+										<strong class="tits">체험 및 전시시설</strong>
+										<a href="javascript:popOpen('#vedio-pop-04');" class="link-btn-02">사이버 전시</a>
+	
+										<ul class="txt-list">
+											<li class="">
+												<strong>풍수해 체험</strong>
+												<p>풍수해 안전교육, 풍수해 피해 예방, 태풍 강속 체험</p>
+											</li>
+											<li class="">
+												<strong>미세먼지 체험</strong>
+												<p>침묵의 살인자 미세먼지, 일상 속 미세먼지 대처법,
+													미세먼지 OX퀴즈, 감염병의 위험</p>
+											</li>
+											<li class="">
+												<strong>지진 체험</strong>
+												<p>지진 안전교육, 학교에서 지진이 발생했어요.
+													운동장으로 대피해요, 여진을 조심해요</p>
+											</li>
+											<li class="">
+												<strong>사회안전 체험</strong>
+												<p>경보발령시 비상상황 대처법, 화생방 보호장비,
+													생존배낭 꾸리기</p>
+											</li>
+											<li class="">
+												<strong>선박안전 체험</strong>
+												<p>선박 이용시 주의사항, 선박안전 수칙과 구명설비
+													선박사고 시 비상탈출, 물놀이 안전교육</p>
+											</li>
+										</ul>
+	
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pop-lay safety li05">
+							<div class="pop-h">
+								학생안전지역 <span>성교육, 생명존중등의 체험을 할 수있습니다.</span>
+							</div>
+							<div class="pop-con">
+								<div class="safety-box">
+									<div class="img-box">
+										<img src="/home/images/sub/01/01_05_pop.jpg" alt="야외안전지역"/>
+									</div>
+									<div class="con-box">
+										<ul class="list-in">
+											<li>
+												<div class="cons">
+													<span class="icon li01"></span>
+													<strong>체험인원</strong>
+													<p>15명</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li02"></span>
+													<strong>소요시간</strong>
+													<p>80분</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li03"></span>
+													<strong>체험대상</strong>
+													<p>초,중,고등학생</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li04"></span>
+													<strong>예약신청</strong>
+													<p>홈페이지 예약</p>
+												</div>
+											</li>
+										</ul>
+	
+										<strong class="tits">체험 및 전시시설</strong>
+										<a href="javascript:popOpen('#vedio-pop-05');" class="link-btn-02">사이버 전시</a>
+	
+										<ul class="txt-list">
+											<li class="">
+												<strong>오리엔테이션(사랑받기 위해 태어난 나)</strong>
+												<p>
+													280일간의 여정<br/>
+													레인보우 터치, 아주 사소한 칭찬, 사랑 서약
+												</p>
+											</li>
+											<li class="">
+												<strong>생명존중 체험</strong>
+												<p>스트레스 마주하기, 스트레스 해우소</p>
+											</li>
+											<li class="">
+												<strong>성교육</strong>
+												<p>
+													생명의 탄생<br/>
+													생각의 꽃이 피는 사춘기의 성(초등학교 고학년 이상 권장)<br/>
+													왜곡된 성을 고발합니다. 나만의 고유한 성(개성)
+												</p>
+											</li>
+											<li class="">
+												<strong>또래 캠프</strong>
+												<ul>
+													<li>With You(성폭력)-(초등학교 고학년 이상 권장)</li>
+													<li>긍정 이모티콘 콘테스트(학교폭력)-(초등학교 고학년
+														이상 권장)</li>
+													<li>혼자가 아니야(생명 살림)-(초등학교 고학년 이상 권장)</li>
+													<li>우리들의 소중한 인권</li>
+												</ul>
+											</li>
+											<li class="">
+												<strong>성폭력예방 교육</strong>
+												<p>안전한 우리동네, 모의법정</p>
+											</li>
+											<li class="">
+												<strong>중독예방 체험</strong>
+												<p>
+													중독예방 사전교육<br/>
+													음주 간접체험(초등학교 고학년 이상 권장)<br/>
+													흡연 간접체험(초등학교 고학년 이상 권장)
+												</p>
+											</li>
+											<li class="">
+												<strong>학교폭력 예방 체험</strong>
+												<p>모두가 즐거워야 장난, 방관자에서 도움 되는 방어자로
+													스마트폰 에티켓</p>
+											</li>
+											<li class="">
+												<strong>중독예방 체험</strong>
+												<p>에필로그(나, 너 그리고 우리)</p>
+											</li>
+	
+										</ul>
+	
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pop-lay safety li06">
+							<div class="pop-h">
+								응급안전지역 <span>하임리히법, 생활응급처치를 체험할 수 있습니다.</span>
+							</div>
+							<div class="pop-con">
+								<div class="safety-box">
+									<div class="img-box">
+										<img src="/home/images/sub/01/01_06_pop.jpg" alt="야외안전지역"/>
+									</div>
+									<div class="con-box">
+										<ul class="list-in">
+											<li>
+												<div class="cons">
+													<span class="icon li01"></span>
+													<strong>체험인원</strong>
+													<p>15명</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li02"></span>
+													<strong>소요시간</strong>
+													<p>80분</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li03"></span>
+													<strong>체험대상</strong>
+													<p>초,중,고등학생</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<span class="icon li04"></span>
+													<strong>예약신청</strong>
+													<p>홈페이지 예약</p>
+												</div>
+											</li>
+										</ul>
+	
+										<strong class="tits">체험 및 전시시설</strong>
+										<a href="javascript:popOpen('#vedio-pop-06');" class="link-btn-02">사이버 전시</a>
+	
+										<ul class="txt-list">
+											<li class="ws">
+												<strong>미래안전 체험</strong>
+												<p>
+													미래도시 사이버안전 체험(VR) (초등학교 저학년 이상 권장)<br/>
+													가상 안전체험 (VR)
+												</p>
+											</li>
+											<li class="ws">
+												<strong>응급안전</strong>
+												<p>
+													4D 영상체험(신장 110cm 이상)<br/>
+													심폐소생술 체험<br/>
+													기도폐쇄, 하임리히법<br/>
+													생활 응급처치법
+												</p>
+											</li>
+	
+	
+										</ul>
+	
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pop-lay safety li07">
+							<div class="pop-h">
+								유아안전지역 <span>가정 안전, 유치원 안전, 우리동네 안전을 체험할 수 있습니다. </span>
+							</div>
+							<div class="pop-con">
+								<div class="safety-box">
+									<div class="img-box"><img alt="유아안전지역" data-cke-saved-src="/home/images/sub/01/01_07_pop_n.jpg" src="/home/images/sub/01/01_07_pop_n.jpg" /></div>
+									<div class="con-box">
+										<ul class="list-in">
+											<li>
+												<div class="cons">
+													<div class="icon li01"><br /></div>
+													<strong>체험인원</strong>
+													<p>15명</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<div class="icon li02"><br /></div>
+													<strong>소요시간</strong>
+													<p>80분</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<div class="icon li03"><br /></div>
+													<strong>체험대상</strong>
+													<p>유치원 재학생</p>
+												</div>
+											</li>
+											<li>
+												<div class="cons">
+													<div class="icon li04"><br /></div>
+													<strong>체험예약</strong>
+													<p>홈페이지 예약</p>
+												</div>
+											</li>
+										</ul>
+										<strong class="tits">체험 및 전시시설</strong>
+
+										<ul class="txt-list">
+											<li>
+												<strong>가정안전 체험</strong>
+												<p>거실안전, 주방안전, 욕실안전, 발코니 안전 등 생활안전 교육</p>
+											</li>
+											<li>
+												<strong>화재안전 체험</strong>
+												<p>화재안전 교육, 화재신고체험, 화재대피 교육, 소화기 사용법 교육</p>
+											</li>
+											<li>
+												<strong>보행안전체험</strong>
+												<p>교통안전교육, 보행안전수칙교육, 횡단보도 건너기, 킥보드 안전 교육</p>
+											</li>
+											<li>
+												<strong>승강기 안전 체험</strong>
+												<p>승강기 안전교육, 승강기 사고 체험</p>
+											</li>
+											<li>
+												<strong>지진안전 체험</strong>
+												<p>지진 안전교육, 유치원에서 지진 발생 시 대피 교육</p>
+											</li>
+											<li>
+												<strong>차량안전 체험</strong>
+												<p>버스안전수칙교육, 버스사고 시 비상탈출 교육</p>
+											</li>
+											<li>
+												<strong>태풍 안전 체험</strong>
+												<p>태풍 안전교육, 태풍 피해 예방교육, 태풍 강속 체험</p>
+											</li>
+											<li>
+												<strong>상황별 응급처치</strong>
+												<p>심폐소생술 체험, 생활응급처치법</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="close-btn-wrap">
+							<a href="javascript:void(0)" class="pop-close">close</a>
+						</div>
+					</div>
+					<div class="pop-modal fade" id="vedio-pop-01">
+						<div class="video-pop">
+							<div class="video-wrap">
+								<video controls="" class="myVideo" width="100%"><source src="/mov/mov_02.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+							</div>
+							<div class="video-con">
+								<strong class="video-tit">일상안전지역</strong>
+								<a href="javascript:void(0)" class="video-close">닫기</a>
+							</div>
+						</div>
+					</div>
+					<div class="pop-modal fade" id="vedio-pop-02">
+						<div class="video-pop">
+							<div class="video-wrap">
+								<video controls="" class="myVideo" width="100%"><source src="/mov/mov_01.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+							</div>
+							<div class="video-con">
+								<strong class="video-tit">교통안전지역</strong>
+								<a href="javascript:void(0)" class="video-close">닫기</a>
+							</div>
+						</div>
+					</div>
+					<div class="pop-modal fade" id="vedio-pop-03">
+						<div class="video-pop">
+							<div class="video-wrap">
+								<video controls="" class="myVideo" width="100%"><source src="/mov/mov_03.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+							</div>
+							<div class="video-con">
+								<strong class="video-tit">미래안전지역</strong>
+								<a href="javascript:void(0)" class="video-close">닫기</a>
+							</div>
+						</div>
+					</div>
+					<div class="pop-modal fade" id="vedio-pop-04">
+						<div class="video-pop">
+							<div class="video-wrap">
+								<video controls="" class="myVideo" width="100%"><source src="/mov/mov_04.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+							</div>
+							<div class="video-con">
+								<strong class="video-tit">야외안전지역</strong>
+								<a href="javascript:void(0)" class="video-close">닫기</a>
+							</div>
+						</div>
+					</div>
+					<div class="pop-modal fade" id="vedio-pop-05">
+						<div class="video-pop">
+							<div class="video-wrap">
+								<video controls="" class="myVideo" width="100%"><source src="/mov/mov_07.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+							</div>
+							<div class="video-con">
+								<strong class="video-tit">학생안전지역</strong>
+								<a href="javascript:void(0)" class="video-close">닫기</a>
+							</div>
+						</div>
+					</div>
+					<div class="pop-modal fade" id="vedio-pop-06">
+						<div class="video-pop">
+							<div class="video-wrap">
+								<video controls="" class="myVideo" width="100%"><source src="/mov/mov_05.mp4" type="video/mp4" /> Sorry, your browser doesn&#39;t support embedded videos.</video>
+							</div>
+							<div class="video-con">
+								<strong class="video-tit">응급안전지역</strong>
+								<a href="javascript:void(0)" class="video-close">닫기</a>
+							</div>
+						</div>
+					</div>
+
+	
+	
+	
+
+<!-- 체험시설안내 -->
+
+<!---------------------------------------한국어--------------------------------------------->		
+	
+</div>						
+
+							
+					
+				
+					
+					
+
+				
+			</div>
+		</div>
+
+	</div>
+
+	<footer id="footer">
+		
+
+
+
+
+
+
+
+		<div class="con-area">
+			<div class="foot-logo">
+				<img src="/home/images/common/foot_logo.png" class="pc" alt="" />
+				<img src="/home/images/common/mo_foot_logo.png" class="mo" alt="" />
+			</div>
+			<div class="con-box">
+			
+				
+					<ul class="foot-menu">
+						<li><a href="/ko/page/sub/sub07_01.do">사이트맵</a></li>
+						<li><a href="/ko/page/sub/sub07_02.do"><span style="color:#fcca20;">개인정보처리방침</span></a></li><!-- 개인정보처리방침 -->
+						<li><a href="/ko/page/sub/sub07_03.do">고정형 영상정보처리기기 운영관리 방침</a></li>
+						<li><a href="/ko/page/sub/sub07_04.do">저작권 정책</a></li>
+						<li><a href="/ko/page/sub/sub01_07.do">대관시설현황</a></li>
+						<li><a href="/ko/page/sub/reportCenter.do">직장 내 성희롱 신고센터</a></li>
+						
+						
+					</ul>
+					
+					
+					
+				
+				<div class="txt-box">
+					<ul>
+						<li>
+							<span></span>
+						   	 · 주소 : [11502] 경기도 양주시 광적면 부흥로 618번길 323-61<br/>
+						   	 · 전화번호 : 031-839-1400 · 팩스번호 : 031-839-1459(운영지원부), 031-839-1489(교육운영부)
+						</li>
+						<li>Copyright ⓒ 2020 Gyeonggi-do Office of Education Safety Education Institute. All Rights Reserved.</li>
+						
+					</ul>
+				</div>
+			</div>
+
+			<div class="right-box">
+				<ul class="sns-list">
+					<li><a href="https://www.youtube.com/channel/UCrUKhUdt1BOnmurctZQhldA" target="_blank"><img src="/home/images/common/youtube_i.png" alt="" /></a></li>
+					<!--<li><a href="#" target="_blank"><img src="/home/images/common/facebook_i.png" alt="" /></a></li>
+					<li><a href="#" target="_blank"><img src="/home/images/common/insta_i.png" alt="" /></a></li>-->
+				</ul>
+				<div class="fot-info">
+					<ul class="visit-list">
+						<li>
+							<p>1일 방문자 수</p><!-- 1일 방문자 수 -->
+							<span>1,402</span>
+						</li>
+						<li>
+							<p>전체 방문자 수</p><!-- 전체 방문자 수 -->
+							<span>17,520,512</span>
+						</li>
+					</ul>
+
+					<ul class="viewer-list">
+						<li>
+							<p>뷰어다운로드</p><!-- 뷰어다운로드 -->
+							<div class="con-box">
+								<a href="/viewers/ExcelViewer.exe" class="icon excel">엑셀</a><!-- 엑셀 -->
+								<a href="/viewers/PowerPointViewer.exe" class="icon power">파워포인트</a><!-- 파워포인트 -->
+								<a href="/viewers/wordview_ko-kr.exe" class="icon word">워드</a><!-- 워드 -->
+								<a href="/viewers/readerdc_kr_ka_cra_install.exe" class="icon pdf">PDF</a><!-- pdf -->
+								<a href="/viewers/HOffice2020_Viewer.exe" class="icon hwp">한글</a><!-- 한글 -->
+							</div>
+						</li>
+					</ul>
+
+				</div>
+				
+			</div>
+		</div>
+			
+	</footer>
+
+</div>
+
+
+<!-- 메인 팝업 베너 출력!! -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+	.in_popup{border:2px solid #ddd;background:#fff;}
+	.popupwrap {position:absolute;z-index:999999;background:#fff;}	
+	.popupfoot{margin-bottom:-3px;padding:10px 0;border-top:2px solid #ddd;background:##fffcfc;}
+	.popupfoot:after{display:block;content:"";clear:both;}
+	.popupfoot .popfleft{float:left;margin-left:20px;}
+	.popupfoot .popfright{float:right;margin-right:20px;}
+
+	@media screen and (max-width:800px) {
+		.popupwrap{top:80px !important;left:0 !important;}	
+	}
+	@media screen and (max-width:600px) {
+		.in_popup{overflow-y:scroll;}
+		.popupwrap{width:100%;}	
+	}
+
+</style>
+
+
+
+
+<!---- 레이어팝업를 위한 스크립트 ---->
+<script language="JavaScript">	
+	jQuery(document).ready(function($){
+		var a = 3;
+		$(".popupwrap").draggable();
+	});	
+	
+	function notice_setCookie( name, value, expiredays ) 
+    { 
+        var todayDate = new Date(); 
+        todayDate.setDate( todayDate.getDate() + expiredays ); 
+        document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";" 
+	} 	
+	  
+	function closeWin(win,name,no) { 
+		if ( document.notice_form["chkbox_"+no].checked){ 
+			notice_setCookie( name, "done" , 1 ); 
+		} 
+		document.getElementById(win).style.display="none";
+	}	
+</script>
+
+<form name="notice_form">
+
+
+
+
+
+
+	
+				
+		<div id="divpop199" class="popupwrap"
+			style="left:13%;
+				top:150px;
+				z-index:1000+0;">
+		
+		<div class="in_popup">
+		
+						
+			 
+				<div id="template02"><br/><div class="h-box"><img alt="경기도교육청안전교육관" src="/home/images/common/popup_logo.png" /></div><br/><br/><div class="con-box"><br/><h2 style="font-style:italic;"><strong><span>2026 겨울방학 기간 교육 예약 안내<br /><br/>- 방학기간을 맞아 평일 체험교육을 가족시민 대상으로 확대 실시합니다 -<br /><br/>&nbsp; 많은 관심과 참여 바랍니다.</span></strong></h2><br/><br/><div style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;"><big>1. 교육기간 : 2026년 1월 2일(금) ~ 2월 28일(화) (공휴일, 설명절, 2월 12~14일&nbsp;등 휴관일 참고)<br /><br/>2. 예약 오픈일: <strong>1월:&nbsp;2025년 12월 16일(화) 09:00~</strong><br /><br/><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2월: 2026년 1월 20일(화) 09:00~</strong>&nbsp;<br /><br/>3. 대상 : 일반 시민(8세이상가능/7세 이하는 체험장에 올라갈 수 없음, 가족 체험의 경우 반드시 보호자 동반)<br /><br/>&nbsp;* 토요일은 응급,학생 영역은 운영하지 않습니다.[교통, 야외, 일상만 운영]<br /><br/>&nbsp;* 각 부당 1개 영역만 선택할 수 있음(ex. 1부 교통, 2부 야외 3부 일상)</big></div><br/><br/><div align="left" style="font-size:110%"></div><br/></div><br/></div>
+			
+			
+			<div class="popupfoot">
+				<div class="popfleft">
+					<input type="checkbox" name="chkbox_199" value="checkbox"/>
+					<label>오늘 하루 이창 열지 않기</label><!-- 오늘 하루 이창 열지 않기 -->
+				</div>
+				<div class="popfright">
+					<a href="javascript:closeWin('divpop199','199','199');">										
+						&nbsp;&nbsp;<span>닫기</span>&nbsp;&nbsp;<!-- 닫기 -->
+						
+
+						
+					</a>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<script language="Javascript">  
+	cookiedata = document.cookie;  	
+	if ( cookiedata.indexOf("199=done") < 0 ){          
+		document.getElementById("divpop199").style.display="block";
+	} else {
+		document.getElementById("divpop199").style.display="none";		
+	}
+	</script>	
+	
+
+
+
+	
+				
+		<div id="divpop226" class="popupwrap"
+			style="left:48%;
+				top:150px;
+				z-index:1000+0;">
+		
+		<div class="in_popup">
+		
+						
+			 
+				<div id="template02"><br/><div class="h-box"><img alt="경기도교육청안전교육관" src="/home/images/common/popup_logo.png" /></div><br/><br/><div class="con-box"><strong><span>홈페이지 일시 중단 안내</span></strong><br/><br/><div align="left" style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;">경기도교육청 정보자원통합 사업에 따라<br /><br/>아래 기간동안 <strong><span class="marker" color="red">안전교육관 홈페이지 사용이 중단</span></strong>됩니다.<br /><br/><br /><br/>&nbsp; &nbsp; - <strong><span class="marker" color="red">중단일시 :&nbsp;2026.3.5.(목) 14:00 ~ 2026.3.8.(일) 23:00까지(예정)</span></strong><br /><br/>&nbsp; &nbsp; - 사유 : 경기도교육청 100  109k    0  109k    0     0   340k      0 --:--:-- --:--:-- --:--:--  344k
+* Connection #0 to host www.goese.kr:443 left intact
+정보자원통합 이전에 따른 홈페이지 접속 중단<br /><br/>&nbsp; &nbsp;&nbsp;&nbsp; ※&nbsp;빠른 시간내에 이전을 완료하여 조속히 운영되도록 하겠습니다.<br /><br/><br /><br/>이용에 불편을 드려 죄송합니다.</div><br/>&nbsp;</div><br/></div>
+			
+			
+			<div class="popupfoot">
+				<div class="popfleft">
+					<input type="checkbox" name="chkbox_226" value="checkbox"/>
+					<label>오늘 하루 이창 열지 않기</label><!-- 오늘 하루 이창 열지 않기 -->
+				</div>
+				<div class="popfright">
+					<a href="javascript:closeWin('divpop226','226','226');">										
+						&nbsp;&nbsp;<span>닫기</span>&nbsp;&nbsp;<!-- 닫기 -->
+						
+
+						
+					</a>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<script language="Javascript">  
+	cookiedata = document.cookie;  	
+	if ( cookiedata.indexOf("226=done") < 0 ){          
+		document.getElementById("divpop226").style.display="block";
+	} else {
+		document.getElementById("divpop226").style.display="none";		
+	}
+	</script>	
+	
+
+</form>		
+
+<!---- 메인 비주얼 이미지를 위한 스크립트 ---->
+<form name="visualImage_form">
+
+</form>					
+							
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,33 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Host www.kench.kr:443 was resolved.
+* IPv6: (none)
+* IPv4: 220.120.129.226
+*   Trying 220.120.129.226:443...
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* ALPN: server did not agree on a protocol. Uses default.
+* Established connection to www.kench.kr (220.120.129.226 port 443) from 192.168.0.9 port 61801 
+* using HTTP/1.x
+> HEAD / HTTP/1.1
+> Host: www.kench.kr
+> User-Agent: curl/8.16.0
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 302 Found
+< Date: Thu, 19 Feb 2026 03:51:36 GMT
+< Content-Type: text/html; charset=UTF-8
+< Connection: keep-alive
+< Server: Apache
+< Location: https://www.kench.kr/main.php
+< 
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+* Connection #0 to host www.kench.kr:443 left intact
+HTTP/1.1 302 Found
+Date: Thu, 19 Feb 2026 03:51:36 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+Server: Apache
+Location: https://www.kench.kr/main.php
+

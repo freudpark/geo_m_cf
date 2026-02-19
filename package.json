@@ -1,0 +1,36 @@
+{
+  "name": "sentinel",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
+    "@types/node-fetch": "^2.6.13",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.564.0",
+    "next": "16.1.6",
+    "node-fetch": "^2.7.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-dropzone": "^15.0.0",
+    "tailwind-merge": "^3.4.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260214.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

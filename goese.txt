@@ -1,0 +1,39 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Host www.goese.kr:443 was resolved.
+* IPv6: (none)
+* IPv4: 211.185.51.1
+*   Trying 211.185.51.1:443...
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* ALPN: server did not agree on a protocol. Uses default.
+* Established connection to www.goese.kr (211.185.51.1 port 443) from 192.168.0.9 port 52556 
+* using HTTP/1.x
+> HEAD / HTTP/1.1
+> Host: www.goese.kr
+> User-Agent: curl/8.16.0
+> Accept: */*
+> 
+* Request completely sent off
+* schannel: remote party requests renegotiation
+* schannel: renegotiating SSL/TLS connection
+* schannel: SSL/TLS connection renegotiated
+* schannel: remote party requests renegotiation
+* schannel: renegotiating SSL/TLS connection
+* schannel: SSL/TLS connection renegotiated
+< HTTP/1.1 302 Moved Temporarily
+< Date: Thu, 19 Feb 2026 03:44:26 GMT
+< Server: Apache
+< Location: /ko/page/main.do
+< Content-Type: text/html;charset=utf-8
+< Set-Cookie: JSESSIONID=28E44E2F7D4C325D5C5FFB39B451C718; Path=/; Secure; HttpOnly; SameSite=Lax
+< 
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+* Connection #0 to host www.goese.kr:443 left intact
+HTTP/1.1 302 Moved Temporarily
+Date: Thu, 19 Feb 2026 03:44:26 GMT
+Server: Apache
+Location: /ko/page/main.do
+Content-Type: text/html;charset=utf-8
+Set-Cookie: JSESSIONID=28E44E2F7D4C325D5C5FFB39B451C718; Path=/; Secure; HttpOnly; SameSite=Lax
+
