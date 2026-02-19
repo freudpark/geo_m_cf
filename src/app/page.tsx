@@ -7,10 +7,18 @@ export const runtime = 'edge'; // Enabled for Cloudflare Pages
 export const dynamic = 'force-dynamic';
 
 export default async function Home() {
-  const targets = await getDashboardData();
-  // const activeCount = targets.length;
-  // const okCount = targets.filter(t => t.latestLog?.result === 'OK').length;
-  // const failCount = activeCount - okCount;
+  let targets = [];
+  let errorMsg = null;
+
+  try {
+    targets = await getDashboardData();
+  } catch (e: any) {
+    console.error("Dashboard Error:", e);
+    errorMsg = e.message || "Unknown error occurred";
+    if (JSON.stringify(e).includes("binding")) {
+      errorMsg += " (Potential DB Binding Issue)";
+    }
+  }
 
   return (
     <main className="min-h-screen bg-[#0F172A] text-slate-200 selection:bg-[#39FF14] selection:text-[#0F172A] flex flex-col">
@@ -32,7 +40,17 @@ export default async function Home() {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 pt-20 pb-10 flex-grow">
-        <MonitoringTable targets={targets} />
+        {errorMsg ? (
+          <div className="p-4 bg-red-900/50 border border-red-500 rounded text-red-200">
+            <h2 className="font-bold text-lg mb-2">System Error (Debug Mode)</h2>
+            <p className="font-mono text-sm">{errorMsg}</p>
+            <p className="mt-4 text-xs text-slate-400">
+              If this says "Database binding not found", please check Cloudflare Pages Settings - Bindings.
+            </p>
+          </div>
+        ) : (
+          <MonitoringTable targets={targets} />
+        )}
       </div>
 
       {/* Footer */}
