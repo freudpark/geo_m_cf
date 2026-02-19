@@ -69,7 +69,8 @@ export async function checkTarget(target: Target): Promise<{ status: number; lat
         };
 
         try {
-            status = await performRequest(modernHeaders, 5000);
+            // First attempt: Modern headers, 2.5s timeout (Aggressive fail fast)
+            status = await performRequest(modernHeaders, 2500);
 
             if (status === 400 || status === 403 || status === 406 || status === 500) {
                 throw new Error('RETRY_LEGACY');
@@ -92,7 +93,8 @@ export async function checkTarget(target: Target): Promise<{ status: number; lat
                     'Accept': '*/*'
                 };
 
-                status = await performRequest(legacyHeaders, 10000);
+                // Give legacy servers a reasonable time (5s)
+                status = await performRequest(legacyHeaders, 5000);
             } else {
                 throw err; // Real error, rethrow to outer catch
             }
