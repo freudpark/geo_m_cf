@@ -1,3 +1,7 @@
+'use client';
+
+import { Target, LogResult } from '@/lib/db';
+import { cn } from '@/lib/utils';
 // @ts-ignore
 import { Play, Loader2, RefreshCw, ExternalLink, Globe, Server, Database } from 'lucide-react';
 import { useState } from 'react';
@@ -139,12 +143,12 @@ export function MonitoringTable({ targets }: { targets: DashboardTarget[] }) {
                                     </td>
                                     <td className="px-4 py-3 text-center">
                                         <div className="flex items-center justify-center gap-3 text-[10px] text-slate-500 font-mono">
-                                            {target.was_cnt > 0 && (
+                                            {(target.was_cnt || 0) > 0 && (
                                                 <span className="flex items-center gap-1" title={`WAS: ${target.was_cnt}`}>
                                                     <Server className="w-3 h-3" /> {target.was_cnt}
                                                 </span>
                                             )}
-                                            {target.web_cnt > 0 && (
+                                            {(target.web_cnt || 0) > 0 && (
                                                 <span className="flex items-center gap-1" title={`WEB: ${target.web_cnt}`}>
                                                     <Globe className="w-3 h-3" /> {target.web_cnt}
                                                 </span>

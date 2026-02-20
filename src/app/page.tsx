@@ -22,7 +22,6 @@ export default async function Home() {
   }
 
   return (
-    return (
     <main className="min-h-screen bg-slate-950 text-slate-200">
       {/* Header */}
       <header className="border-b border-slate-800 bg-slate-900/50 sticky top-0 z-50 backdrop-blur-sm">
