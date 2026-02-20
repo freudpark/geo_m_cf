@@ -20,7 +20,7 @@
    ```
 2. 로컬 데이터베이스 생성 (최초 1회):
    ```bash
-   npx wrangler d1 execute sentinel-db --local --file=d1/schema.sql
+   npx wrangler d1 execute# sentinel (Build trigger)-db --local --file=d1/schema.sql
    ```
 3. 개발 서버 실행:
    ```bash
