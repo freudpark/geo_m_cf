@@ -290,6 +290,7 @@ function findValue(row: any, ...keys: string[]) {
 }
 
 export async function syncGoogleSheet(url: string) {
+    console.log(`[Sync] Starting sync for URL: ${url}`);
     try {
         let exportUrl = url;
 
@@ -301,21 +302,26 @@ export async function syncGoogleSheet(url: string) {
             }
         }
 
-        console.log(`[Sync] Fetching: ${exportUrl}`);
+        console.log(`[Sync] Fetching CSV from: ${exportUrl}`);
         const response = await fetch(exportUrl);
+
+        console.log(`[Sync] Fetch response status: ${response.status}`);
         if (!response.ok) {
             throw new Error(`구글 시트에 접근할 수 없습니다. (HTTP ${response.status}). 시트가 '링크가 있는 모든 사용자에게 공개' 되어있는지 확인해주세요.`);
         }
 
         const csvText = await response.text();
+        console.log(`[Sync] CSV text length: ${csvText.length}`);
+
         const rows = parseCSV(csvText);
+        console.log(`[Sync] Parsed rows count: ${rows.length}`);
 
         if (rows.length === 0) {
             return { success: false, error: 'CSV 데이터를 파싱할 수 없습니다.' };
         }
 
         console.log(`[Sync] Parsed Headers:`, Object.keys(rows[0]));
-        console.log(`[Sync] First Row Sample:`, rows[0]);
+        // console.log(`[Sync] First Row Sample:`, rows[0]);
 
         // Map columns with fuzzy matching
         const targets = rows.map((row: any) => {
@@ -343,9 +349,11 @@ export async function syncGoogleSheet(url: string) {
                 keyword: undefined,
                 interval: 5,
                 is_active: 1,
-                category: category || '교육지원청'
+                category: category || '지역교육청'
             };
         }).filter((t: any) => t.url && (t.url.startsWith('http') || t.url.startsWith('https')));
+
+        console.log(`[Sync] Valid targets found: ${targets.length}`);
 
         if (targets.length === 0) {
             return { success: false, error: '유효한 URL을 가진 데이터가 없습니다. [URL] 컬럼을 확인해주세요.' };
