@@ -1,24 +1,35 @@
 import { Target } from './index';
 
-// Use FS for persistence in Node environment (Dev)
-// NOTE: This requires removing 'edge' runtime from page.tsx in dev
+// Global In-Memory Store (Fallback for Edge Runtime)
+declare global {
+    var _mockMemoryDB: Target[];
+    var _mockLogs: any[];
+}
+
+// Initialize Global Stores if not present
+if (!global._mockMemoryDB) global._mockMemoryDB = [];
+if (!global._mockLogs) global._mockLogs = [];
+
+// Node.js FS (Only available in Node Environment)
 let fs: any;
 let path: any;
 let DB_PATH = '';
 
-// Helper to lazy load Node.js modules
-function ensureNodeEnv() {
-    if (process.env.NODE_ENV !== 'development') return false;
+// Helper to check environment and load modules
+function isNodeEnv() {
+    return process.env.NODE_ENV === 'development' && typeof process !== 'undefined' && process.versions && process.versions.node;
+}
+
+function ensureFs() {
+    if (!isNodeEnv()) return false;
     try {
         if (!fs) {
             fs = require('fs');
             path = require('path');
             DB_PATH = path.join(process.cwd(), 'mock-db.json');
-            console.log('[MockDB] DB Path resolved to:', DB_PATH);
         }
         return true;
     } catch (e) {
-        console.warn('[MockDB] Failed to load Node modules:', e);
         return false;
     }
 }
@@ -26,47 +37,46 @@ function ensureNodeEnv() {
 const DEFAULT_TARGETS: Target[] = [];
 
 function loadDB(): Target[] {
-    if (!ensureNodeEnv()) {
-        if (process.env.NODE_ENV === 'development') {
-            console.warn('[MockDB] Node environment check failed or not in dev');
+    // 1. Try Loading from Disk (Node Dev Only)
+    if (ensureFs()) {
+        try {
+            if (!fs.existsSync(DB_PATH)) {
+                fs.writeFileSync(DB_PATH, JSON.stringify(DEFAULT_TARGETS, null, 2), 'utf-8');
+                return DEFAULT_TARGETS;
+            }
+            const data = fs.readFileSync(DB_PATH, 'utf-8');
+            const fileData = JSON.parse(data);
+
+            // Sync Disk -> Memory (so we have latest)
+            global._mockMemoryDB = fileData;
+            return fileData;
+        } catch (e) {
+            console.error('[MockDB] Failed to load DB from disk', e);
         }
-        return DEFAULT_TARGETS;
     }
 
-    try {
-        if (!fs.existsSync(DB_PATH)) {
-            console.log('[MockDB] DB file does not exist, creating new one.');
-            // Avoid infinite loop if saveDB also fails
-            if (fs) {
-                fs.writeFileSync(DB_PATH, JSON.stringify(DEFAULT_TARGETS, null, 2), 'utf-8');
-            }
-            return DEFAULT_TARGETS;
-        }
-        const data = fs.readFileSync(DB_PATH, 'utf-8');
-        const parsed = JSON.parse(data);
-        console.log(`[MockDB] Loaded ${parsed.length} targets from disk.`);
-        return parsed;
-    } catch (e) {
-        console.error('[MockDB] Failed to load DB', e);
-        return DEFAULT_TARGETS;
-    }
+    // 2. Fallback to In-Memory (Edge / Production / FS Error)
+    // console.log('[MockDB] Using In-Memory Store directly (No Persistence)');
+    return global._mockMemoryDB || DEFAULT_TARGETS;
 }
 
 function saveDB(data: Target[]) {
-    if (!ensureNodeEnv()) return;
-    try {
-        console.log(`[MockDB] Saving ${data.length} targets to disk...`);
-        fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2), 'utf-8');
-        console.log('[MockDB] Save successful.');
-    } catch (e) {
-        console.error('[MockDB] Failed to save DB', e);
+    // 1. Update In-Memory
+    global._mockMemoryDB = data;
+
+    // 2. Try Saving to Disk (Node Dev Only)
+    if (ensureFs()) {
+        try {
+            fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2), 'utf-8');
+        } catch (e) {
+            console.error('[MockDB] Failed to save DB to disk', e);
+        }
     }
 }
 
 export const mockDB = {
     prepare: (query: string) => {
         const runQuery = async (args: any[] = []) => {
-            // console.log(`[MockDB] Run: ${query}`, args);
             let targets = loadDB();
 
             if (query.includes('INSERT INTO Targets')) {
@@ -79,7 +89,7 @@ export const mockDB = {
                     db_info: args[4] || '',
                     keyword: args[5],
                     interval: args[6] || 5,
-                    is_active: args[7] || 1,
+                    is_active: args[7] !== undefined ? args[7] : 1,
                     category: args[8] || '교육지원청',
                     created_at: new Date().toISOString()
                 };
@@ -124,24 +134,33 @@ export const mockDB = {
         };
 
         const allQuery = async <T>(args: any[] = []) => {
-            // console.log(`[MockDB] Query: ${query}`, args);
             const targets = loadDB();
 
             if (query.includes('SELECT * FROM Targets')) {
+                let results = targets;
+
+                // Simple filter implementation
                 if (query.includes('WHERE id =')) {
                     const id = args[0];
-                    const target = targets.find(t => t.id === id);
-                    return { results: target ? [target] : [] };
+                    results = results.filter(t => t.id === id);
+                } else if (query.includes('WHERE is_active = 1')) {
+                    results = results.filter(t => t.is_active === 1);
                 }
-                // Handle ORDER BY if needed, currently passing as is
-                return { results: targets };
+
+                // Handle ORDER BY (Basic)
+                if (query.includes('ORDER BY id DESC')) {
+                    results.sort((a, b) => b.id - a.id);
+                } else if (query.includes('ORDER BY id ASC')) {
+                    results.sort((a, b) => a.id - b.id);
+                }
+
+                return { results };
             }
             if (query.includes('SELECT * FROM Logs')) {
                 const targetId = args[0];
-                if (!global._mockLogs) global._mockLogs = [];
 
                 // Sort by checked_at DESC and LIMIT 1
-                const logs = global._mockLogs
+                const logs = (global._mockLogs || [])
                     .filter((l: any) => l.target_id === targetId)
                     .sort((a: any, b: any) => new Date(b.checked_at).getTime() - new Date(a.checked_at).getTime());
 
@@ -175,8 +194,3 @@ export const mockDB = {
         return results;
     }
 };
-
-// Global augmentation for logs to persist across hot reloads in dev
-declare global {
-    var _mockLogs: any[];
-}

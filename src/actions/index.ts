@@ -34,7 +34,8 @@ function getDB() {
             const { mockDB } = require('../lib/db/mock');
             return mockDB as unknown as D1Database;
         } catch (e) {
-            console.warn("Failed to load mockDB:", e);
+            console.error("[getDB] Failed to load mockDB (Dynamic Import Error):", e);
+            throw e; // Re-throw to make it visible as 500
         }
     }
 
