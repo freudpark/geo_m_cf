@@ -11,43 +11,51 @@ interface DashboardTarget extends Target {
 // DYNAMIC IMPORT for mockDB to avoid Edge Runtime crash in production
 // import { mockDB } from '../lib/db/mock'; 
 
-function getDB() {
-    // 1. Try getRequestContext (Standard for Pages Plugin)
+function getDB(): D1Database {
+    const diagnostics: string[] = [];
+
+    // 1. Try getRequestContext (Standard for Cloudflare Pages)
     try {
         const ctx = getRequestContext();
-        if (ctx.env.DB) {
+        diagnostics.push(`getRequestContext() succeeded. env keys: ${Object.keys(ctx.env || {}).join(', ')}`);
+        if (ctx.env && ctx.env.DB) {
+            diagnostics.push('D1 binding "DB" found via getRequestContext!');
+            console.log('[getDB]', diagnostics.join(' | '));
             return ctx.env.DB as unknown as D1Database;
+        } else {
+            diagnostics.push('WARNING: getRequestContext() returned but ctx.env.DB is missing!');
         }
-    } catch (e) {
-        // Ignore error if getRequestContext is not available (e.g. local dev outside of pages dev)
+    } catch (e: any) {
+        diagnostics.push(`getRequestContext() failed: ${e.message || String(e)}`);
     }
 
-    // 2. Try process.env (Fallback for some environments)
-    if (process.env.DB) {
-        return process.env.DB as unknown as D1Database;
+    // 2. Try process.env (Fallback)
+    try {
+        if (process.env.DB) {
+            diagnostics.push('Found DB in process.env');
+            return process.env.DB as unknown as D1Database;
+        }
+        diagnostics.push(`process.env.NODE_ENV=${process.env.NODE_ENV}`);
+    } catch (e: any) {
+        diagnostics.push(`process.env check failed: ${e.message}`);
     }
 
-    // 3. Local Development -> Use Mock DB (Dynamic Import)
+    // 3. Development -> Use Mock DB
     if (process.env.NODE_ENV === 'development') {
         try {
-            // eslint-disable-next-line @typescript-eslint/no-var-requires
             const { mockDB } = require('../lib/db/mock');
+            diagnostics.push('Loaded mockDB for development');
+            console.log('[getDB]', diagnostics.join(' | '));
             return mockDB as unknown as D1Database;
-        } catch (e) {
-            console.error("[getDB] Failed to load mockDB (Dynamic Import Error):", e);
-            // Fallback for Edge Runtime in Dev (if strictly enforced)
-            console.warn("[getDB] Attempting fallback to DUMMY_DB for Edge Dev");
-            return {
-                prepare: () => ({
-                    bind: () => ({ all: async () => ({ results: [] }), run: async () => ({ success: false }) })
-                })
-            } as unknown as D1Database;
+        } catch (e: any) {
+            diagnostics.push(`mockDB load failed: ${e.message}`);
         }
     }
 
-    // 4. Production but no DB -> Throw Error (Don't use MockDB which crashes Edge)
-    console.error("CRITICAL ERROR: D1 Database binding 'DB' is missing.");
-    throw new Error("Database binding not found. Please check Cloudflare Pages Settings - Bindings.");
+    // 4. All methods failed - Log full diagnostics and throw
+    const fullDiag = diagnostics.join(' | ');
+    console.error(`[getDB] CRITICAL: All DB methods failed. Diagnostics: ${fullDiag}`);
+    throw new Error(`Database binding not found. Diagnostics: ${fullDiag}`);
 }
 
 export async function getDashboardData(): Promise<DashboardTarget[]> {
