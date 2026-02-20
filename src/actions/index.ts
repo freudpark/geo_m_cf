@@ -8,34 +8,88 @@ interface DashboardTarget extends Target {
     latestLog?: LogResult;
 }
 
+async function ensureTables(db: D1Database) {
+    try {
+        // Create Targets table
+        await db.prepare(`
+            CREATE TABLE IF NOT EXISTS Targets (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL,
+                url TEXT NOT NULL,
+                was_cnt INTEGER DEFAULT 0,
+                web_cnt INTEGER DEFAULT 0,
+                db_info TEXT,
+                keyword TEXT,
+                interval INTEGER DEFAULT 5,
+                is_active INTEGER DEFAULT 1,
+                category TEXT DEFAULT '지역교육청',
+                created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+            )
+        `).run();
+
+        // Create Logs table
+        await db.prepare(`
+            CREATE TABLE IF NOT EXISTS Logs (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                target_id INTEGER NOT NULL,
+                status INTEGER,
+                latency INTEGER,
+                result TEXT,
+                details TEXT,
+                checked_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (target_id) REFERENCES Targets(id)
+            )
+        `).run();
+
+        // Create Metadata table for persistent settings
+        await db.prepare(`
+            CREATE TABLE IF NOT EXISTS Metadata (
+                key TEXT PRIMARY KEY,
+                value TEXT
+            )
+        `).run();
+    } catch (e) {
+        console.error('[ensureTables] Failed to initialize tables:', e);
+    }
+}
+
 async function getDB(): Promise<D1Database> {
+    let db: D1Database | null = null;
+
     // 1. Try getCloudflareContext (OpenNext adapter)
     try {
         const { env } = await getCloudflareContext();
         if (env.DB) {
-            return env.DB as unknown as D1Database;
+            db = env.DB as unknown as D1Database;
+        } else {
+            console.warn('[getDB] env.DB is missing. env keys:', Object.keys(env));
         }
-        console.warn('[getDB] getCloudflareContext() succeeded but env.DB is missing. env keys:', Object.keys(env));
     } catch (e: any) {
         console.warn(`[getDB] getCloudflareContext() failed: ${e.message}`);
     }
 
     // 2. Try process.env (Fallback)
-    if (process.env.DB) {
-        return process.env.DB as unknown as D1Database;
+    if (!db && process.env.DB) {
+        db = process.env.DB as unknown as D1Database;
     }
 
     // 3. Development -> Use Mock DB
-    if (process.env.NODE_ENV === 'development') {
+    if (!db && process.env.NODE_ENV === 'development') {
         try {
             const { mockDB } = require('../lib/db/mock');
-            return mockDB as unknown as D1Database;
+            db = mockDB as unknown as D1Database;
         } catch (e: any) {
             console.warn(`[getDB] mockDB load failed: ${e.message}`);
         }
     }
 
-    throw new Error('Database binding not found. Check Cloudflare D1 bindings.');
+    if (!db) {
+        throw new Error('Database binding not found. Check Cloudflare D1 bindings.');
+    }
+
+    // Auto-initialize tables
+    await ensureTables(db);
+    return db;
 }
 
 export async function getDashboardData(): Promise<DashboardTarget[]> {
@@ -302,9 +356,26 @@ export async function syncGoogleSheet(url: string) {
         await deleteAllTargets();
 
         await uploadTargets(targets);
+
+        // Save last synced URL to D1 Metadata
+        const db = await getDB();
+        await db.prepare("INSERT OR REPLACE INTO Metadata (key, value) VALUES ('last_synced_url', ?)")
+            .bind(url)
+            .run();
+
         return { success: true, count: targets.length };
     } catch (e: any) {
         console.error('Sync Error:', e);
         return { success: false, error: e.message || '동기화 중 오류가 발생했습니다.' };
+    }
+}
+
+export async function getLastSyncedUrl(): Promise<string | null> {
+    try {
+        const db = await getDB();
+        const result = await db.prepare("SELECT value FROM Metadata WHERE key = 'last_synced_url'").first<{ value: string }>();
+        return result?.value || null;
+    } catch (e) {
+        return null;
     }
 }

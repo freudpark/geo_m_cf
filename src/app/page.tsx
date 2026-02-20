@@ -2,6 +2,7 @@ import { getDashboardData } from '@/actions';
 import { MonitoringTable } from '@/components/ui/MonitoringTable';
 import { Activity } from 'lucide-react';
 import AdminButton from '@/components/ui/AdminButton';
+import GoogleSheetUrlPanel from '@/components/dashboard/GoogleSheetUrlPanel';
 
 
 export const dynamic = 'force-dynamic';
@@ -39,7 +40,15 @@ export default async function Home() {
       </header>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 pt-20 pb-10 flex-grow">
+      <div className="container mx-auto px-4 pt-20 pb-10 flex-grow max-w-7xl">
+        <div className="mb-8">
+          <h2 className="text-slate-400 text-sm font-medium mb-4 flex items-center gap-2">
+            <Activity className="w-4 h-4" />
+            DASHBOARD CONTROL
+          </h2>
+          <GoogleSheetUrlPanel />
+        </div>
+
         {errorMsg ? (
           <div className="p-4 bg-red-900/50 border border-red-500 rounded text-red-200">
             <h2 className="font-bold text-lg mb-2">System Error (Debug Mode)</h2>
@@ -49,7 +58,19 @@ export default async function Home() {
             </p>
           </div>
         ) : (
-          <MonitoringTable targets={targets} />
+          <div className="space-y-6">
+            {targets.length === 0 ? (
+              <div className="bg-slate-900/50 border border-dashed border-slate-700 rounded-3xl p-12 text-center">
+                <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Activity className="w-8 h-8 text-slate-600" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">등록된 점검 기관이 없습니다</h3>
+                <p className="text-slate-400 mb-6">위 입력창에 구글 시트 URL을 입력하고 [가져오기] 버튼을 눌러 점검을 시작하세요.</p>
+              </div>
+            ) : (
+              <MonitoringTable targets={targets} />
+            )}
+          </div>
         )}
       </div>
 
