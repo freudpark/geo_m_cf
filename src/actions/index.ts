@@ -2,65 +2,45 @@
 
 import { revalidatePath } from 'next/cache';
 import { Target, LogResult } from '../lib/db';
-import { getRequestContext } from '@cloudflare/next-on-pages';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 
 interface DashboardTarget extends Target {
     latestLog?: LogResult;
 }
 
-// DYNAMIC IMPORT for mockDB to avoid Edge Runtime crash in production
-// import { mockDB } from '../lib/db/mock'; 
-
-function getDB(): D1Database {
-    const diagnostics: string[] = [];
-
-    // 1. Try getRequestContext (Standard for Cloudflare Pages)
+async function getDB(): Promise<D1Database> {
+    // 1. Try getCloudflareContext (OpenNext adapter)
     try {
-        const ctx = getRequestContext();
-        diagnostics.push(`getRequestContext() succeeded. env keys: ${Object.keys(ctx.env || {}).join(', ')}`);
-        if (ctx.env && ctx.env.DB) {
-            diagnostics.push('D1 binding "DB" found via getRequestContext!');
-            console.log('[getDB]', diagnostics.join(' | '));
-            return ctx.env.DB as unknown as D1Database;
-        } else {
-            diagnostics.push('WARNING: getRequestContext() returned but ctx.env.DB is missing!');
+        const { env } = await getCloudflareContext();
+        if (env.DB) {
+            return env.DB as unknown as D1Database;
         }
+        console.warn('[getDB] getCloudflareContext() succeeded but env.DB is missing. env keys:', Object.keys(env));
     } catch (e: any) {
-        diagnostics.push(`getRequestContext() failed: ${e.message || String(e)}`);
+        console.warn(`[getDB] getCloudflareContext() failed: ${e.message}`);
     }
 
     // 2. Try process.env (Fallback)
-    try {
-        if (process.env.DB) {
-            diagnostics.push('Found DB in process.env');
-            return process.env.DB as unknown as D1Database;
-        }
-        diagnostics.push(`process.env.NODE_ENV=${process.env.NODE_ENV}`);
-    } catch (e: any) {
-        diagnostics.push(`process.env check failed: ${e.message}`);
+    if (process.env.DB) {
+        return process.env.DB as unknown as D1Database;
     }
 
     // 3. Development -> Use Mock DB
     if (process.env.NODE_ENV === 'development') {
         try {
             const { mockDB } = require('../lib/db/mock');
-            diagnostics.push('Loaded mockDB for development');
-            console.log('[getDB]', diagnostics.join(' | '));
             return mockDB as unknown as D1Database;
         } catch (e: any) {
-            diagnostics.push(`mockDB load failed: ${e.message}`);
+            console.warn(`[getDB] mockDB load failed: ${e.message}`);
         }
     }
 
-    // 4. All methods failed - Log full diagnostics and throw
-    const fullDiag = diagnostics.join(' | ');
-    console.error(`[getDB] CRITICAL: All DB methods failed. Diagnostics: ${fullDiag}`);
-    throw new Error(`Database binding not found. Diagnostics: ${fullDiag}`);
+    throw new Error('Database binding not found. Check Cloudflare D1 bindings.');
 }
 
 export async function getDashboardData(): Promise<DashboardTarget[]> {
     try {
-        const db = getDB();
+        const db = await getDB();
 
         // Fetch active targets
         const { results: targets } = await db
@@ -92,7 +72,7 @@ export async function getDashboardData(): Promise<DashboardTarget[]> {
 
 export async function getAllTargets(): Promise<Target[]> {
     try {
-        const db = getDB();
+        const db = await getDB();
         const { results } = await db.prepare("SELECT * FROM Targets ORDER BY id DESC").all<Target>();
         return results || [];
     } catch (e) {
@@ -102,7 +82,7 @@ export async function getAllTargets(): Promise<Target[]> {
 }
 
 export async function uploadTargets(targets: Omit<Target, 'id' | 'created_at'>[]) {
-    const db = getDB();
+    const db = await getDB();
     const stmt = db.prepare("INSERT INTO Targets (name, url, was_cnt, web_cnt, db_info, keyword, interval, is_active, category) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     try {
@@ -129,7 +109,7 @@ export async function uploadTargets(targets: Omit<Target, 'id' | 'created_at'>[]
 
 export async function toggleTarget(id: number, isActive: boolean) {
     try {
-        const db = getDB();
+        const db = await getDB();
         await db.prepare("UPDATE Targets SET is_active = ? WHERE id = ?")
             .bind(isActive ? 1 : 0, id)
             .run();
@@ -143,7 +123,7 @@ export async function toggleTarget(id: number, isActive: boolean) {
 
 export async function deleteTarget(id: number) {
     try {
-        const db = getDB();
+        const db = await getDB();
         await db.prepare("DELETE FROM Targets WHERE id = ?").bind(id).run();
         revalidatePath('/admin');
         revalidatePath('/');
@@ -155,7 +135,7 @@ export async function deleteTarget(id: number) {
 
 export async function deleteAllTargets() {
     try {
-        const db = getDB();
+        const db = await getDB();
         await db.prepare("DELETE FROM Targets").run();
         // Optionally delete logs too? user didn't ask, but usually yes.
         // await db.prepare("DELETE FROM Logs").run(); 
@@ -171,7 +151,7 @@ import { checkTarget } from '../lib/monitor';
 
 export async function manualCheck(id: number) {
     try {
-        const db = getDB();
+        const db = await getDB();
         // Fetch target
         const { results } = await db.prepare("SELECT * FROM Targets WHERE id = ?").bind(id).all<Target>();
         if (!results || results.length === 0) return { success: false, error: 'Target not found' };
