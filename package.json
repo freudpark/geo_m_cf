@@ -10,7 +10,7 @@
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
-    "cf-pages-build": "opennextjs-cloudflare build && mkdir -p .vercel/output/static && cp -r .open-next/* .vercel/output/static/ && mv .vercel/output/static/worker.js .vercel/output/static/_worker.js && cp -r .open-next/assets/* .vercel/output/static/"
+    "cf-pages-build": "opennextjs-cloudflare build && mkdir -p .vercel/output/static && cp -r .open-next/. .vercel/output/static/ && mv .vercel/output/static/worker.js .vercel/output/static/_worker.js"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.16.5",
