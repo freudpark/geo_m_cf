@@ -6,21 +6,28 @@ import { syncGoogleSheet, getLastSyncedUrl } from '@/actions';
 import { useRouter } from 'next/navigation';
 
 export default function GoogleSheetUrlPanel() {
-    const [url, setUrl] = useState('');
+    // Hardcoded default URL as per user request
+    const DEFAULT_URL = 'https://docs.google.com/spreadsheets/d/1ba41P8uZN0IM5cqSZTUD0bUPdEu4fPasOxG1Dog2xEg/edit?usp=sharing';
+    const [url, setUrl] = useState(DEFAULT_URL);
     const [isSyncing, setIsSyncing] = useState(false);
     const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
     const router = useRouter();
 
-    // Load last synced URL from D1 on mount
+    // Load last synced URL from D1 on mount (optional, priority given to hardcoded default if D1 is empty)
     useEffect(() => {
         const loadLastUrl = async () => {
-            const lastUrl = await getLastSyncedUrl();
-            if (lastUrl) setUrl(lastUrl);
+            try {
+                const lastUrl = await getLastSyncedUrl();
+                if (lastUrl) setUrl(lastUrl);
+            } catch (e) {
+                console.error("Failed to load last URL:", e);
+            }
         };
         loadLastUrl();
     }, []);
 
     const handleSync = async () => {
+        console.log("Sync button clicked with URL:", url);
         if (!url) {
             setMessage({ type: 'error', text: '구글 시트 주소를 입력해주세요.' });
             return;
