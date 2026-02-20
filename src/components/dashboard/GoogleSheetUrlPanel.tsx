@@ -27,7 +27,10 @@ export default function GoogleSheetUrlPanel() {
     }, []);
 
     const handleSync = async () => {
+        // Debug: Force alert to confirm click
+        // alert(`Sync started with URL: ${url}`); 
         console.log("Sync button clicked with URL:", url);
+
         if (!url) {
             setMessage({ type: 'error', text: '구글 시트 주소를 입력해주세요.' });
             return;
@@ -43,14 +46,20 @@ export default function GoogleSheetUrlPanel() {
 
         try {
             const result = await syncGoogleSheet(url);
+            console.log("Sync result:", result);
+
             if (result.success) {
                 setMessage({ type: 'success', text: `${result.count}개의 기관 정보가 동기화되었습니다.` });
-                router.refresh(); // Update dashboard
+                router.refresh();
+                // alert(`성공! ${result.count}개 데이터 로드 완료`);
             } else {
                 setMessage({ type: 'error', text: result.error || '동기화 실패' });
+                alert(`오류 발생: ${result.error}`);
             }
         } catch (e: any) {
+            console.error("Sync Exception:", e);
             setMessage({ type: 'error', text: e.message || '오류 발생' });
+            alert(`시스템 오류: ${e.message}`);
         } finally {
             setIsSyncing(false);
         }
