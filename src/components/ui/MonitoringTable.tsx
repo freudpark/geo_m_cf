@@ -3,7 +3,7 @@
 import { Target, LogResult } from '@/lib/db';
 import { cn } from '@/lib/utils';
 // @ts-ignore
-import { Play, Loader2, RefreshCw, ExternalLink, Globe, Server, Database } from 'lucide-react';
+import { Play, Loader2, RefreshCw, ExternalLink, Globe, Server, Database, Settings } from 'lucide-react';
 import { useState } from 'react';
 import { manualCheck } from '@/actions';
 import { useRouter } from 'next/navigation';
@@ -65,126 +65,114 @@ export function MonitoringTable({ targets }: { targets: DashboardTarget[] }) {
 
     return (
         <div className="space-y-6">
-            {/* Control Bar */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div className="flex gap-2">
-                    <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-md">
-                        <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                        <span className="text-xs font-medium text-slate-300">Normal: <span className="text-white font-bold">{okCount}</span></span>
-                    </div>
-                    <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-md">
-                        <span className="w-2 h-2 rounded-full bg-red-500"></span>
-                        <span className="text-xs font-medium text-slate-300">Error: <span className="text-white font-bold">{failCount}</span></span>
+            {/* Control Bar: Status & Filters */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Status Panel */}
+                <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 flex items-center justify-between shadow-lg shadow-black/20">
+                    <span className="text-sm font-medium text-slate-400">정상</span>
+                    <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span className="text-2xl font-bold text-white">{okCount}</span>
                     </div>
                 </div>
-
-                <div className="flex items-center gap-2">
-                    <select
-                        value={filter}
-                        onChange={(e) => setFilter(e.target.value as any)}
-                        className="bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-md px-2 py-1.5 outline-none focus:border-slate-600"
-                    >
-                        <option value="ALL">전체 보기 ({targets.length})</option>
-                        <option value="REGION">교육지원청</option>
-                        <option value="MAIN">본청/직속기관</option>
-                    </select>
-
-                    <button
-                        onClick={handleCheckAll}
-                        disabled={isCheckingAll}
-                        className="flex items-center gap-2 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium rounded-md transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                        <RefreshCw className={cn("w-3.5 h-3.5", isCheckingAll && "animate-spin")} />
-                        {isCheckingAll ? 'Checking...' : 'Check All'}
-                    </button>
+                <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 flex items-center justify-between shadow-lg shadow-black/20">
+                    <span className="text-sm font-medium text-slate-400">장애</span>
+                    <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                        <span className="text-2xl font-bold text-red-500">{failCount}</span>
+                    </div>
                 </div>
             </div>
 
-            {/* Table View */}
-            <div className="border border-slate-800 rounded-lg overflow-hidden bg-slate-900/20">
-                <table className="w-full text-left border-collapse">
-                    <thead>
-                        <tr className="bg-slate-900/80 border-b border-slate-800 text-xs uppercase text-slate-500 font-semibold tracking-wider">
-                            <th className="px-4 py-3 w-[40px] text-center">#</th>
-                            <th className="px-4 py-3">Organzation</th>
-                            <th className="px-4 py-3 hidden md:table-cell">URL</th>
-                            <th className="px-4 py-3 text-center">Resources</th>
-                            <th className="px-4 py-3 text-right">Status</th>
-                            <th className="px-4 py-3 w-[60px] text-center">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-800/50">
-                        {filteredTargets.map((target, idx) => {
-                            const result = target.latestLog?.result || 'UNKNOWN';
-                            const isOk = result === 'OK';
-                            const isFail = result.startsWith('FAIL');
-                            const isChecking = checkingId === target.id || isCheckingAll;
-                            const statusColor = isOk ? "text-emerald-400" : isFail ? "text-red-400" : "text-slate-500";
-                            const latency = target.latestLog?.latency;
+            <div className="flex items-center justify-between pt-2">
+                <div className="flex p-1 bg-slate-900 border border-slate-800 rounded-lg">
+                    <button
+                        onClick={() => setFilter('REGION')}
+                        className={cn("px-4 py-1.5 text-xs font-medium rounded-md transition-all", filter === 'REGION' ? "bg-slate-800 text-white shadow-sm" : "text-slate-500 hover:text-slate-300")}
+                    >
+                        교육지원청
+                    </button>
+                    <button
+                        onClick={() => setFilter('MAIN')}
+                        className={cn("px-4 py-1.5 text-xs font-medium rounded-md transition-all", filter === 'MAIN' ? "bg-slate-800 text-white shadow-sm" : "text-slate-500 hover:text-slate-300")}
+                    >
+                        본청/직속기관
+                    </button>
+                </div>
 
-                            return (
-                                <tr key={target.id} className="group hover:bg-slate-800/30 transition-colors">
-                                    <td className="px-4 py-3 text-center text-xs text-slate-600 font-mono">
-                                        {idx + 1}
-                                    </td>
-                                    <td className="px-4 py-3">
-                                        <div className="flex items-center gap-2">
-                                            <div className={cn("w-2 h-2 rounded-full", isOk ? "bg-emerald-500" : isFail ? "bg-red-500" : "bg-slate-600")} />
-                                            <span className="text-sm font-medium text-slate-200 group-hover:text-white transition-colors">
-                                                {target.name}
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td className="px-4 py-3 hidden md:table-cell">
-                                        <a href={target.url} target="_blank" rel="noreferrer" className="text-xs text-slate-500 hover:text-indigo-400 hover:underline flex items-center gap-1 transition-colors truncate max-w-[200px]">
-                                            {target.url}
-                                            <ExternalLink className="w-3 h-3" />
-                                        </a>
-                                    </td>
-                                    <td className="px-4 py-3 text-center">
-                                        <div className="flex items-center justify-center gap-3 text-[10px] text-slate-500 font-mono">
-                                            {(target.was_cnt || 0) > 0 && (
-                                                <span className="flex items-center gap-1" title={`WAS: ${target.was_cnt}`}>
-                                                    <Server className="w-3 h-3" /> {target.was_cnt}
-                                                </span>
-                                            )}
-                                            {(target.web_cnt || 0) > 0 && (
-                                                <span className="flex items-center gap-1" title={`WEB: ${target.web_cnt}`}>
-                                                    <Globe className="w-3 h-3" /> {target.web_cnt}
-                                                </span>
-                                            )}
-                                            {target.db_info && (
-                                                <span className="flex items-center gap-1" title={`DB: ${target.db_info}`}>
-                                                    <Database className="w-3 h-3" />
-                                                </span>
-                                            )}
-                                        </div>
-                                    </td>
-                                    <td className="px-4 py-3 text-right">
-                                        <div className="flex flex-col items-end">
-                                            <span className={cn("text-xs font-bold font-mono", statusColor)}>
-                                                {isFail ? "ERROR" : isOk ? "NORMAL" : "PENDING"}
-                                            </span>
-                                            <span className="text-[10px] text-slate-600 font-mono">
-                                                {latency ? `${latency}ms` : '-'}
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td className="px-4 py-3 text-center">
-                                        <button
-                                            onClick={(e) => handleCheck(e, target.id)}
-                                            disabled={isChecking}
-                                            className="p-1.5 rounded-md hover:bg-slate-700 text-slate-400 hover:text-white transition-colors disabled:opacity-50"
-                                            title="Re-check now"
-                                        >
-                                            {isChecking ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Play className="w-3.5 h-3.5 fill-current" />}
-                                        </button>
-                                    </td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
+                <button
+                    onClick={handleCheckAll}
+                    disabled={isCheckingAll}
+                    className="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 hover:text-white text-xs font-medium rounded-lg transition-all active:scale-95 disabled:opacity-50"
+                >
+                    <RefreshCw className={cn("w-3.5 h-3.5", isCheckingAll && "animate-spin")} />
+                    {isCheckingAll ? '점검 중...' : '전체 점검'}
+                </button>
+            </div>
+
+            {/* Grid View */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {filteredTargets.map((target) => {
+                    const result = target.latestLog?.result || 'UNKNOWN';
+                    const isOk = result === 'OK';
+                    const isFail = result.startsWith('FAIL');
+                    const isChecking = checkingId === target.id || isCheckingAll;
+                    const latency = target.latestLog?.latency;
+
+                    return (
+                        <div
+                            key={target.id}
+                            className={cn(
+                                "group relative bg-slate-900 border rounded-lg p-4 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10 hover:-translate-y-0.5",
+                                isFail ? "border-red-900/50 bg-red-950/10" : "border-slate-800 hover:border-slate-700"
+                            )}
+                        >
+                            {/* Status Bar */}
+                            <div className={cn(
+                                "absolute left-0 top-0 bottom-0 w-1 rounded-l-lg transition-colors",
+                                isOk ? "bg-emerald-500" : isFail ? "bg-red-500" : "bg-slate-700"
+                            )} />
+
+                            <div className="flex items-center justify-between mb-3 pl-2">
+                                <div className="flex items-center gap-2">
+                                    <span className={cn(
+                                        "w-1.5 h-1.5 rounded-full",
+                                        isOk ? "bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]" : isFail ? "bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.6)]" : "bg-slate-600"
+                                    )} />
+                                    <h3 className={cn("font-bold text-sm tracking-tight", isFail ? "text-red-400" : "text-slate-100")}>
+                                        {target.name}
+                                    </h3>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <span className={cn(
+                                        "text-[10px] font-mono font-bold",
+                                        isOk ? "text-emerald-500" : isFail ? "text-red-500" : "text-slate-600"
+                                    )}>
+                                        {latency ? `${latency}ms` : '-'}
+                                    </span>
+                                    <button
+                                        onClick={(e) => handleCheck(e, target.id)}
+                                        disabled={isChecking}
+                                        className="text-slate-600 hover:text-emerald-400 transition-colors disabled:opacity-50"
+                                    >
+                                        {isChecking ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <RefreshCw className="w-3.5 h-3.5" />}
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="pl-2 space-y-1">
+                                <a
+                                    href={target.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-[11px] text-slate-500 hover:text-indigo-400 transition-colors truncate block flex items-center gap-1 group-hover:text-slate-400"
+                                >
+                                    {target.url}
+                                </a>
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );
